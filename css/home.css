@@ -1,218 +1,422 @@
- * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+
+.about-section {
+    padding: 60px 0;
+    background-color: #f9f9f9;
+}
+.about-title {
+    color: #001BB7; /* Green text */
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+.about-heading {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+     
+}
+.about-text {
+    color: #555;
+    font-size: 1rem;
+    line-height: 1.7;
+}
+.readmore {
+  background-color: #001BB7;   /* Blue background */
+  color: #fff;                 /* White text */
+  font-weight: 600;
+  padding: 10px 25px;
+  border-radius: 25px;
+  text-decoration: none;
+  transition: 0.3s;
+  display: inline-block;
+}
+
+.readmore:hover {
+  background-color: #000F73;   /* Darker shade */
+  color: #fff;
+  text-decoration: none;
+}
+
+
+.about-img {
+    max-width: 100%;
+    border-radius: 8px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Example carousel animations */
+@keyframes zoomRotate {
+    0% { transform: scale(1) rotate(0deg); }
+    100% { transform: scale(1.1) rotate(5deg); }
+}
+
+@keyframes slideInRight {
+    0% { transform: translateX(100%); opacity: 0; }
+    100% { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes flipScale {
+    0% { transform: rotateY(90deg) scale(0); opacity: 0; }
+    100% { transform: rotateY(0) scale(1); opacity: 1; }
+}
+
+/*  services*/
+
+  .services-section {
+            padding: 80px 0;
         }
 
-        body {
-            background: transparent;
-            font-family: 'Arial', sans-serif;
-            margin-top: 200px;
-            padding: 0;
-        }
-
-        .carousel-container {
-            width: 100%;
-            max-width: 100%;
-            border-radius: 0;
-            overflow: hidden;
-            box-shadow: none;
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 60px;
+            color: #2c3e50;
             position: relative;
-            margin: 0;
         }
 
-        .carousel {
-            background: transparent;
-        }
-
-        .carousel-inner {
-            border-radius: 0;
-            overflow: hidden;
-            background: transparent;
-        }
-
-        .carousel-item {
-            height: 400px;
-            position: relative;
-            background: transparent;
-            transition: none;
-        }
-
-        .carousel-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 0;
-            display: block;
-        }
-
-        /* Remove scale and opacity effects */
-        .carousel-item.active img {
-            transform: scale(1);
-            opacity: 1;
-        }
-
-        /* Animation for first image - Zoom and Rotate */
-        .carousel-item:nth-child(1).active img {
-            animation: zoomRotate 0.8s ease-out forwards;
-        }
-
-        @keyframes zoomRotate {
-            0% {
-                transform: scale(0.5) rotate(-10deg);
-                opacity: 0;
-                filter: blur(10px);
-            }
-            50% {
-                transform: scale(1.1) rotate(5deg);
-                opacity: 0.8;
-                filter: blur(2px);
-            }
-            100% {
-                transform: scale(1) rotate(0deg);
-                opacity: 1;
-                filter: blur(0px);
-            }
-        }
-
-        /* Animation for second image - Slide and Fade */
-        .carousel-item:nth-child(2).active img {
-            animation: slideInRight 0.8s ease-out forwards;
-        }
-
-        @keyframes slideInRight {
-            0% {
-                transform: translateX(100%) scale(0.8);
-                opacity: 0;
-                filter: brightness(0.5) contrast(1.5);
-            }
-            50% {
-                transform: translateX(-10%) scale(1.05);
-                opacity: 0.7;
-                filter: brightness(0.8) contrast(1.2);
-            }
-            100% {
-                transform: translateX(0) scale(1);
-                opacity: 1;
-                filter: brightness(1) contrast(1);
-            }
-        }
-
-        /* Animation for third image - Flip and Scale */
-        .carousel-item:nth-child(3).active img {
-            animation: flipScale 0.8s ease-out forwards;
-        }
-
-        @keyframes flipScale {
-            0% {
-                transform: rotateY(90deg) scale(0.6);
-                opacity: 0;
-                filter: hue-rotate(180deg) saturate(2);
-            }
-            50% {
-                transform: rotateY(45deg) scale(1.1);
-                opacity: 0.6;
-                filter: hue-rotate(90deg) saturate(1.5);
-            }
-            100% {
-                transform: rotateY(0deg) scale(1);
-                opacity: 1;
-                filter: hue-rotate(0deg) saturate(1);
-            }
-        }
-
-        /* Custom indicators */
-        .carousel-indicators {
-            bottom: 20px;
-            margin-bottom: 0;
-        }
-
-        .carousel-indicators [data-bs-target] {
-            width: 15px;
-            height: 15px;
-            border-radius: 50%;
-            background-color: rgba(255, 255, 255, 0.5);
-            border: 2px solid rgba(255, 255, 255, 0.8);
-            transition: all 0.3s ease;
-        }
-
-        .carousel-indicators .active {
-            background-color: #fff;
-            transform: scale(1.3);
-            box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
-        }
-
-        /* Custom controls - smaller and less prominent */
-        .carousel-control-prev,
-        .carousel-control-next {
-            width: 40px;
-            height: 40px;
-            top: 50%;
-            transform: translateY(-50%);
-            background: rgba(0, 0, 0, 0.5);
-            border-radius: 50%;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(5px);
-            transition: all 0.3s ease;
-        }
-
-        .carousel-control-prev {
-            left: 10px;
-        }
-
-        .carousel-control-next {
-            right: 10px;
-        }
-
-        .carousel-control-prev:hover,
-        .carousel-control-next:hover {
-            background: rgba(255, 255, 255, 0.2);
-            border-color: rgba(255, 255, 255, 0.8);
-            transform: translateY(-50%) scale(1.1);
-        }
-
-        .carousel-control-prev-icon,
-        .carousel-control-next-icon {
-            filter: brightness(0) invert(1);
-            width: 16px;
-            height: 16px;
-        }
-
-        /* Image overlay effects */
-        .carousel-item::before {
+        .section-title::after {
             content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(135deg, #001BB7 0%, #0026D1 100%);
+            border-radius: 2px;
+        }
+
+        .service-card {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            height: 320px;
+            cursor: pointer;
+            margin-bottom: 30px;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+        }
+
+        .card-image {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .service-card:hover .card-image {
+            transform: scale(1.1);
+        }
+
+        .card-content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .service-icon {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 50px;
+            height: 50px;
+            background: #4CAF50;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 20px;
+            z-index: 2;
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover .service-icon {
+            background: #45a049;
+            transform: scale(1.1);
+        }
+
+        .card-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .hover-overlay {
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
             bottom: 0;
-            background: linear-gradient(45deg, rgba(0,0,0,0.05) 0%, rgba(255,255,255,0.02) 100%);
-            z-index: 1;
-            border-radius: 0;
-            transition: opacity 0.3s ease;
+            background: rgba(52, 73, 94, 0.74);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: all 0.4s ease;
+            z-index: 3;
         }
 
-        .carousel-item:hover::before {
-            opacity: 0.7;
-        }
-
-        /* Remove pulse animation for cleaner integration */
-        .carousel-item.active::after {
-            display: none;
-        }
-
-        /* Instant slide transitions - no fade/color effects */
-        .carousel-item {
-            transition: none;
+        .service-card:hover .hover-overlay {
             opacity: 1;
         }
 
-        .carousel-item:not(.active) {
-            display: none;
+        .read-more-btn {
+            background: linear-gradient(135deg, #001BB7 0%, #0026D1 100%);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
         }
 
-        .carousel-item.active {
-            display: block;
-            opacity: 1;
-            position: relative;
+        .read-more-btn:hover {
+            background: linear-gradient(135deg, #0026D1 0%, #001BB7 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+            color: white;
         }
+
+        /* Different icon colors for each service */
+        .b2b-icon { background: #3498db !important; }
+        .tech-icon { background: #e74c3c !important; }
+        .decision-icon { background: #f39c12 !important; }
+        .industry-icon { background: #9b59b6 !important; }
+        .healthcare-icon { background: #1abc9c !important; }
+        .append-icon { background: #2ecc71 !important; }
+
+        .service-card:hover .b2b-icon { background: #2980b9 !important; }
+        .service-card:hover .tech-icon { background: #c0392b !important; }
+        .service-card:hover .decision-icon { background: #e67e22 !important; }
+        .service-card:hover .industry-icon { background: #8e44ad !important; }
+        .service-card:hover .healthcare-icon { background: #16a085 !important; }
+        .service-card:hover .append-icon { background: #27ae60 !important; }
+
+        @media (max-width: 768px) {
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .service-card {
+                height: 280px;
+            }
+            
+            .card-image {
+                height: 180px;
+            }
+        }
+
+
+        /* our clients */
+   /* Main Section */
+    .main-section {
+      background-color:#001BB7  ;
+      padding: 80px 0;
+      position: relative;
+      overflow: hidden;
+      min-height: 500px;
+    }
+
+    .main-section::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="40" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="40" cy="80" r="1.5" fill="rgba(255,255,255,0.1)"/></svg>');
+      opacity: 0.3;
+    }
+
+    /* Stats Cards */
+    .stat-card {
+      background: rgba(37, 53, 88, 0.1);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 8px;
+      padding: 40px 20px;
+      text-align: center;
+      color: white;
+      margin-bottom: 20px;
+      transition: all 0.3s ease;
+      height: 140px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    .stat-card:hover {
+      transform: translateY(-5px);
+      background: rgba(255, 255, 255, 0.15);
+    }
+
+    .stat-number {
+      font-size: 3rem;
+      font-weight: bold;
+      margin-bottom: 8px;
+      color: white;
+      line-height: 1;
+    }
+
+    .stat-label {
+      font-size: 0.9rem;
+      opacity: 0.9;
+      line-height: 1.2;
+    }
+
+    /* Why Choose Us Content */
+    .why-choose-content {
+      color: white;
+      padding-left: 40px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .section-title {
+      color: white;
+      font-weight: bold;
+      margin-bottom: 25px;
+      font-size: 2.2rem;
+      letter-spacing: 1px;
+    }
+
+    .description-text {
+      color: rgba(255, 255, 255, 0.9);
+      line-height: 1.6;
+      margin-bottom: 35px;
+      font-size: 0.95rem;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .feature-item {
+      display: flex;
+      align-items: center;
+      padding: 8px 0;
+    }
+
+    .feature-icon {
+      width: 30px;
+      height: 30px;
+      background: var(--accent-color);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 12px;
+      color: var(--primary-color);
+      font-size: 0.9rem;
+      flex-shrink: 0;
+    }
+
+    .feature-text {
+      color: white;
+      font-weight: 500;
+      margin: 0;
+      font-size: 0.9rem;
+    }
+
+    /* Clients Section */
+    .clients-section {
+      padding: 80px 0;
+      background: var(--primary-color);
+      color: #001BB7;
+      overflow: hidden;
+    }
+
+    .clients-title {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 50px;
+      color: var(--accent-color);
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    .client-carousel {
+      overflow: hidden;
+      position: relative;
+      height: 120px;
+    }
+
+    .client-track {
+      display: flex;
+      animation: scroll 25s linear infinite;
+      width: calc(280px * 8);
+    }
+
+    .client-card {
+      background: #fff;
+      color:#001BB7;
+      border-radius: 10px;
+      padding: 20px;
+      margin: 0 10px;
+      min-width: 260px;
+      height: 100px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 3px 15px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease;
+    }
+
+    .client-card:hover {
+      transform: scale(1.05);
+    }
+
+    .client-logo {
+      font-size: 1.3rem;
+      font-weight: bold;
+      color: var(--primary-color);
+      text-align: center;
+      line-height: 1.3;
+    }
+
+    @keyframes scroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(calc(-280px * 4)); }
+    }
+
+    .client-track:hover {
+      animation-play-state: paused;
+    }
+
+    /* Responsive */
+    @media (max-width: 992px) {
+      .why-choose-content {
+        padding-left: 20px;
+        margin-top: 40px;
+      }
+      .features-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .stat-number { font-size: 2.5rem; }
+      .stat-card { height: 120px; padding: 30px 15px; }
+      .section-title { font-size: 1.8rem; }
+      .clients-title { font-size: 2rem; }
+      .why-choose-content { padding-left: 0; }
+    }

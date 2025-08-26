@@ -7,16 +7,100 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
+          <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"  /> 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  
+     <style>
+    .hero-section {
+      background: url('https://eaog2nkqckp.exactdn.com/wp-content/uploads/2024/10/112406_How_to_use_branding_in_your_email_marketing.webp?strip=all&lossy=1&ssl=1') center/cover no-repeat;
+      position: relative;
+      padding: 100px 0;
+      color: #fff;
+      text-align: center;
+    }
+     /* Glass Effect */
+  .glass-box {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.15); /* frosted white */
+    border-radius: 16px;
+    padding: 20px 50px;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #fff; /* white text for contrast */
+  }
+    .hero-section::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 27, 183, 0.7); /* blue overlay */
+    }
+    .hero-section h1 {
+      position: relative;
+      z-index: 1;
+      font-weight: 700;
+      font-size: 2.5rem;
+    }
+    .content-section {
+      padding: 60px 15px;
+    }
+    .content-section h2 {
+      color: #001BB7;
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+    .content-section p {
+      line-height: 1.7;
+      font-size: 1rem;
+      color: #333;
+    }
+  </style>
+  
   </head>
   <body>
       <div id="navbar"></div>
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="glass-box">
+      <h1>EMAIL MARKETING PROGRAMS</h1>
+    </div>
+  </section>
 
-      <h1>Email Marketing</h1>
-      <p>Boost your campaigns with our Email Marketing services.</p>
+  <!-- Content Section -->
+  <section class="content-section">
+    <div class="container-fluid">
+      <div class="row align-items-center">
+        <!-- Text -->
+        <div class="col-lg-7">
+          <h2>A Robust Email Marketing Strategy Ensures High Deliverability</h2>
+          <p>
+            Email marketing is one of the most cost-effective online marketing strategies for businesses, especially small & medium firms. According to Data & Marketing Association, with very little investment, email marketing brings an exponential ROI (Return on Investment) for businesses in the USA. The reason for this is email marketing is easy-to-manage, pliable, and allows you to directly contact your potential customers.
+          </p>
+          <p>
+            Opting for the best email marketing service provider will definitely influence the success of your marketing campaign. It is imperative that you realize that success with email marketing majorly depends on the email marketing software you employ as they ensure that your emails are delivered. We, at Data Snap Solutions Inc., have the tool you need to advance your business. You need not be worried about exorbitant charges for fewer marketing features as we offer competitive rates for all our services. Also, we assure reasonable email deliverability rates.
+          </p>
+          <p>
+            We facilitate you to create highly captivating email newsletters with an ingenious UI. Through marketing automation, we make bulk email sending effortless. Also, with dozens of expertly designed email templates, we facilitate you to send stimulating emails, guaranteeing delivery. More than anything else, we make sure that your email campaign does not end up sitting in the spam folder. We have designed a drag-and-drop email builder that helps you send email campaigns in a jiffy. With little or no coding, you can include compelling images and videos to create responsive layouts. Even a technically non-so-sound professional can use this tool easily.
+          </p>
+        </div>
+        <!-- Image -->
+        <div class="col-lg-5 text-center">
+          <img src="https://ecommercenews.co/_next/image/?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2F0c1rithi%2Fproduction%2F5ba5ca24621d46b572436c96047169936dbb4985-1792x1024.webp%3Fw%3D1792%26q%3D100%26auto%3Dformat&w=3840&q=100" alt="Email Marketing Programs" class="img-fluid rounded shadow">
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
 
       <div id="footer"></div>
-          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         // Load Navbar dynamically
         fetch('/pages/navbar.html')

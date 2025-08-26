@@ -1,41 +1,172 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <title>Title</title>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  </head>
-  <body>
-      <div id="navbar"></div>
+<head>
+  <title>Healthcare Data</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-       <h1>Healthcare Solutions</h1>
-       <p>Improve patient outcomes with our Healthcare Solutions.</p>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
-      <div id="footer"></div>
-          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        // Load Navbar dynamically
-        fetch('/pages/navbar.html')
-            .then(res => res.text())
-            .then(data => {
-                document.getElementById('navbar').innerHTML = data;
-            });
+  <!-- Custom CSS -->
+  <style>
+    .hero-section {
+      background-image: url('https://datasnapsolutionsinc.com/assets/images/services/gas-industry.jpg');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      padding: 100px 0;
+      text-align: center;
+      position: relative;
+    }
 
-        // Load Footer dynamically
-        fetch('/pages/footer.html')
-            .then(res => res.text())
-            .then(data => {
-                document.getElementById('footer').innerHTML = data;
-            });
-    </script>
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-  </body>
+    .hero-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.6);
+    }
+
+    .hero-section h1 {
+      position: relative;
+      z-index: 1;
+      font-size: 3rem;
+      font-weight: bold;
+    }
+
+    .section-content {
+      padding: 60px 15px;
+    }
+
+    .btn-custom {
+      background-color: #28a745;
+      color: white;
+      margin-bottom: 10px;
+      width: 100%;
+      padding: 10px 15px;
+      border-radius: 5px;
+      transition: all 0.3s ease-in-out;
+      font-weight: 500;
+    }
+
+    .btn-custom:hover {
+      background-color: #218838;
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .btn-group-custom h5 {
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <div id="navbar"></div>
+
+  <!-- Hero -->
+  <div class="hero-section">
+    <h1>HEALTHCARE DATA</h1>
+  </div>
+
+  <!-- Content Section -->
+  <div class="container section-content">
+    <div class="row">
+      <div class="col-md-8">
+        <h5 class="text-uppercase font-weight-bold mb-3">Get Better Conversions in the Healthcare Industry</h5>
+        <p>Healthcare data refers to any data that is pertinent to the healthcare industry. Inefficient contact data can
+          keep you away from healthcare mavens and incomplete data sources can inhibit you from reaching your potential
+          customers. Data Snap Solutions Inc. possesses an all-embracing repertoire of impeccable data that help you
+          contact the right medical experts that in turn can burgeon your sales and revenue.</p>
+
+        <h5 class="text-uppercase font-weight-bold mt-4 mb-3">Why Expand Your Healthcare Contact Database with Data Snap
+          Solutions Inc.,</h5>
+        <p>The data analysts at Data Snap Solutions Inc., take a single-minded, fastidious approach when they are
+          required to forage for reliable, contactable data. They source data from various reliable platforms such as
+          medical associations, healthcare news, newspapers & magazines, webinars, blogs, and product roll outs.</p>
+
+        <h5 class="text-uppercase font-weight-bold mt-4 mb-3">Competitive Advantage</h5>
+        <p>The healthcare information we provide will include direct contact details, including contact numbers, fax
+          numbers, email addresses, and postal addresses in order to give you the utmost results in line with your
+          unique requirements. The accurate data we provide are bolstered by a meticulous verification process that
+          promotes your sales & marketing approaches, communications, and most importantly, customer engagement.</p>
+      </div>
+
+      <div class="col-md-4 text-center">
+        <img src="https://datasnapsolutionsinc.com/assets/images/services/gas-industry.jpg" alt="Healthcare Image"
+          class="img-fluid rounded">
+      </div>
+    </div>
+
+    <!-- Email Lists Section -->
+    <div class="mt-5">
+      <h4 class="text-center font-weight-bold mb-4">Our Healthcare Email Lists by Specialists</h4>
+      <div class="row">
+        <div class="col-md-4 btn-group-custom">
+          <button class="btn btn-custom">Addiction Counselors Email List</button>
+          <button class="btn btn-custom">Obstetricians Email List</button>
+          <button class="btn btn-custom">Oncologists Email List</button>
+          <button class="btn btn-custom">Internal Medicine Email List</button>
+        </div>
+        <div class="col-md-4 btn-group-custom">
+          <button class="btn btn-custom">Cosmetologists Email List</button>
+          <button class="btn btn-custom">Anesthesiologists Email List</button>
+          <button class="btn btn-custom">Nurse Practitioners Email List</button>
+          <button class="btn btn-custom">Internal Medicine Email List</button>
+        </div>
+        <div class="col-md-4 btn-group-custom">
+          <button class="btn btn-custom">Gynecologists Email List</button>
+          <button class="btn btn-custom">Cardiologists Email List</button>
+          <button class="btn btn-custom">Family/Marital Therapists Email List</button>
+          <button class="btn btn-custom">Orthopedists Email List</button>
+        </div>
+      </div>
+
+      <!-- More Lists -->
+      <div class="mt-5">
+        <h5 class="text-center font-weight-bold mb-3">Healthcare Service Providers List</h5>
+        <div class="row">
+          <div class="col-md-4 offset-md-2">
+            <button class="btn btn-custom">Pharma and Biotech Email List</button>
+            <button class="btn btn-custom">Hospital Email List</button>
+          </div>
+          <div class="col-md-4">
+            <button class="btn btn-custom">Labs and Diagnostics Email List</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div id="footer"></div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    fetch('/pages/navbar.html')
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById('navbar').innerHTML = data;
+      });
+
+    fetch('/pages/footer.html')
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById('footer').innerHTML = data;
+      });
+  </script>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+</body>
+
 </html>

@@ -1,115 +1,514 @@
-<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Data Snap Solutions</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
 
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Data Snap Solutions</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
   <style>
     :root {
-      --primary-blue: #003366;
-      --secondary-blue: #007bff;
+      --primary-blue: #0046FF;
+      --primary-purple: #6366F1;
+      --primary-pink: #EC4899;
+      --dark-blue: #1E293B;
+      --light-gray: #F8FAFC;
+      --gray-200: #E2E8F0;
+      --gray-400: #94A3B8;
+      --white: #FFFFFF;
+      --glass-bg: rgba(255, 255, 255, 0.1);
+      --glass-border: rgba(255, 255, 255, 0.18);
+      --shadow-light: rgba(0, 70, 255, 0.15);
+      --shadow-heavy: rgba(0, 70, 255, 0.3);
     }
 
-    /* 🔹 Top Navbar */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+      min-height: 100vh;
+      color: #333;
+    }
+
+    /* Loading Bar */
+    .loading-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(90deg,
+          var(--primary-blue),
+          rgba(255, 255, 255, 0.5),
+          var(--primary-blue));
+      transform: scaleX(0);
+      transform-origin: left;
+      animation: loading 2s ease-in-out infinite;
+      z-index: 9999;
+    }
+
+    @keyframes loading {
+      0% {
+        transform: scaleX(0);
+      }
+
+      50% {
+        transform: scaleX(1);
+      }
+
+      100% {
+        transform: scaleX(0);
+      }
+    }
+
+    /* Topbar */
     .topbar {
-      background: #fff;
-      padding: 10px 0;
-      border-bottom: 1px solid #e0e0e0;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--glass-border);
+      padding: 20px 0;
+      position: relative;
+      z-index: 1000;
+    }
+
+    .topbar::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(90deg,
+          transparent,
+          rgba(0, 70, 255, 0.05),
+          transparent);
+      pointer-events: none;
+    }
+
+    .topbar-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 20px;
+    }
+
+    .logo img {
+      height: 80px;
+      filter: drop-shadow(0 4px 8px var(--shadow-light));
+      transition: transform 0.3s ease;
+    }
+
+    .logo img:hover {
+      transform: scale(1.05);
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 15px;
+      width: 100%;
+      max-width: 800px;
+    }
+
+    .info-card {
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(10px);
+      border-radius: 15px;
+      border: 1px solid var(--glass-border);
+      padding: 15px;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .info-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg,
+          transparent,
+          rgba(0, 70, 255, 0.1),
+          transparent);
+      transition: left 0.6s ease;
+    }
+
+    .info-card:hover::before {
+      left: 100%;
+    }
+
+    .info-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px var(--shadow-light);
+      border-color: var(--primary-blue);
+    }
+
+    .info-icon {
+      font-size: 24px;
+      color: var(--primary-blue);
+      margin-bottom: 8px;
+    }
+
+    .info-title {
+      font-weight: 600;
+      color: var(--primary-blue);
+      margin-bottom: 2px;
+    }
+
+    .info-detail {
+      color: #666;
       font-size: 14px;
     }
-    .topbar .info-item {
-      display: flex;
-      align-items: center;
-      margin-right: 25px;
-    }
-    .topbar i {
-      font-size: 20px;
-      color: #28a745; /* green icons */
-      margin-right: 8px;
-    }
-    .topbar a {
-      color: #000;
-      text-decoration: none;
-      font-weight: 500;
-    }
-    .topbar a:hover {
-      color: var(--secondary-blue);
-    }
-    .topbar strong {
-      display: block;
-      font-size: 13px;
-    }
-    .topbar span {
-      font-size: 12px;
-      color: #555;
+
+    .mobile-menu-btn {
+      background: rgba(255, 255, 255, 0.2);
+      border: none;
+      border-radius: 10px;
+      padding: 8px 12px;
+      backdrop-filter: blur(10px);
+      transition: all 0.3s ease;
     }
 
-    /* 🔹 Main Navbar */
-    .navbar {
-      background: var(--primary-blue);
+    .mobile-menu-btn:hover {
+      background: rgba(255, 255, 255, 0.3);
+      transform: scale(1.05);
     }
-    .navbar-brand,
-    .navbar-nav .nav-link {
-      color: #fff !important;
-      font-weight: 600;
+
+    .mobile-menu-btn i {
+      color: var(--primary-blue);
+      font-size: 24px;
+    }
+
+    /* Main Navigation */
+    .main-nav {
+      background: rgba(0, 70, 255, 0.95);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 0;
+      position: relative;
+      z-index: 999;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .main-nav::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(90deg,
+          rgba(255, 255, 255, 0.1) 0%,
+          transparent 50%,
+          rgba(255, 255, 255, 0.1) 100%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .main-nav:hover::before {
+      opacity: 1;
+    }
+
+    .main-nav.sticky {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: rgba(0, 70, 255, 0.98);
+      box-shadow: 0 8px 32px var(--shadow-heavy);
+      animation: slideDown 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    @keyframes slideDown {
+      from {
+        transform: translateY(-100%);
+        opacity: 0;
+      }
+
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .nav-menu {
+      display: flex;
+      list-style: none;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .nav-item {
+      position: relative;
+    }
+
+    .nav-link {
+      color: var(--white) !important;
+      font-weight: 500;
       text-transform: uppercase;
-      padding: 12px 18px;
-    }
-    .navbar-nav .nav-link:hover {
-      color: var(--secondary-blue) !important;
-    }
-    .dropdown-menu {
+      font-size: 14px;
+      letter-spacing: 0.5px;
+      padding: 18px 20px !important;
+      position: relative;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
       border-radius: 8px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      overflow: hidden;
     }
+
+    .nav-link::before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 0;
+      height: 3px;
+      background: linear-gradient(90deg,
+          transparent,
+          var(--white),
+          transparent);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      transform: translateX(-50%);
+      border-radius: 2px;
+    }
+
+    .nav-link::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(255, 255, 255, 0.1);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      border-radius: 8px;
+    }
+
+    .nav-link:hover::before {
+      width: 80%;
+    }
+
+    .nav-link:hover::after {
+      opacity: 1;
+    }
+
+    .nav-link:hover {
+      transform: translateY(-2px);
+      color: var(--white) !important;
+    }
+
+    /* Dropdown Menu */
+    .dropdown-menu {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid var(--glass-border);
+      border-radius: 15px;
+      box-shadow: 0 20px 40px var(--shadow-light);
+      padding: 10px 0;
+      margin-top: 10px;
+      min-width: 250px;
+      animation: dropdownSlide 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    @keyframes dropdownSlide {
+      from {
+        opacity: 0;
+        transform: translateY(-10px) scale(0.95);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    .dropdown-item {
+      color: #333;
+      padding: 12px 20px;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      border-radius: 10px;
+      margin: 2px 10px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .dropdown-item::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg,
+          transparent,
+          var(--primary-blue),
+          transparent);
+      opacity: 0.1;
+      transition: left 0.5s ease;
+    }
+
+    .dropdown-item:hover::before {
+      left: 100%;
+    }
+
     .dropdown-item:hover {
-      background: var(--primary-blue);
-      color: #fff;
+      background: rgba(0, 70, 255, 0.1);
+      color: var(--primary-blue);
+      transform: translateX(5px);
     }
-    .nav-item
-    {
-        padding: 0 32px;
+
+    /* Mobile Styles */
+    @media (max-width: 991.98px) {
+      .topbar {
+        padding: 15px 0;
+      }
+
+      .info-grid {
+        display: none;
+      }
+
+      .topbar .logo img {
+        height: 60px;
+      }
+
+      .navbar-collapse {
+        background: rgba(0, 70, 255, 0.98);
+        backdrop-filter: blur(20px);
+        border-radius: 15px;
+        margin-top: 10px;
+        padding: 20px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .nav-link {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        margin-bottom: 5px;
+        border-radius: 8px;
+      }
+
+      .dropdown-menu {
+        background: rgba(0, 70, 255, 0.9);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+      }
+
+      .dropdown-item {
+        color: var(--white);
+        margin: 2px 0;
+      }
+
+      .dropdown-item:hover {
+        background: rgba(255, 255, 255, 0.2);
+        color: var(--white);
+      }
     }
   </style>
 </head>
+
 <body>
+  <!-- Loading Bar -->
+  <div class="loading-bar"></div>
 
-<!-- 🔹 Top Info Bar -->
-<div class="topbar">
-  <div class="container d-flex flex-wrap justify-content-between align-items-center">
-    <!-- Logo -->
-    <div class="d-flex align-items-center mb-2 mb-lg-0">
-      <img src="https://datasnapsolutionsinc.com/assets/images/logo.png" alt="Logo" class="me-2">
+  <!-- Topbar -->
+  <header class="topbar">
+    <div class="topbar-container">
+      <div class="logo">
+        <img src="https://datasnapsolutionsinc.com/assets/images/logo.png" alt="Data Snap Solutions Logo" />
+      </div>
 
+      <div class="info-grid">
+        <div class="info-card">
+          <div class="info-icon">
+            <i class="fas fa-map-marker-alt"></i>
+          </div>
+          <div class="info-title">Location</div>
+          <div class="info-detail">
+            <div>3524 Silverside Road</div>
+            <div>Suite 35B Wilmington, DE</div>
+          </div>
+        </div>
+
+        <div class="info-card">
+          <div class="info-icon">
+            <i class="fas fa-phone-alt"></i>
+          </div>
+          <div class="info-title">Phone</div>
+          <div class="info-detail">+1 302 538 9148</div>
+        </div>
+
+        <div class="info-card">
+          <div class="info-icon">
+            <i class="fas fa-envelope"></i>
+          </div>
+          <div class="info-title">Email</div>
+          <div class="info-detail">info@datasnapsolutionsinc.com</div>
+        </div>
+      </div>
+
+      <button class="mobile-menu-btn" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavMenu">
+        <i class="fas fa-bars"></i>
+      </button>
     </div>
 
-    <!-- Info Items -->
-    <div class="d-flex flex-wrap align-items-center">
-      <div class="info-item">
-        <i class="bi bi-geo-alt-fill"></i>
-        <div>
-          <strong>Location</strong>
-          <span>3524 Silverside Road, Suite 35B Wilmington, DE 19810-4929</span>
-        </div>
+  </header>
+
+  <!-- Main Navigation -->
+  <nav class="main-nav" id="mainNav">
+    <div class="nav-container">
+      <div class="collapse navbar-collapse justify-content-center" id="mainNavMenu">
+        <ul class="nav-menu">
+          <li class="nav-item">
+            <a class="nav-link" href="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/pages/about.html">About Us</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Data Services</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="/pages/b2b-data.html">B2B Data</a></li>
+              <li><a class="dropdown-item" href="/pages/tech-data.html">Technology Data</a></li>
+              <li><a class="dropdown-item" href="/pages//key-design-data.html">Key Decision Makers</a></li>
+              <li><a class="dropdown-item" href="/pages/industry.html">Industry Data</a></li>
+              <li><a class="dropdown-item" href="/pages/healthcare.html">Healthcare Data</a></li>
+              <li><a class="dropdown-item" href="/pages/post-pre-event-data.html">Post/Pre Event</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Data Solutions</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="/pages/data-append.html">Data Append</a></li>
+              <li><a class="dropdown-item" href="/pages/email-append.html">Email Append</a></li>
+              <li><a class="dropdown-item" href="/pages/email-marketing.html">Email Marketing</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/pages/pricing.html">Pricing</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/pages/contact-us.html">Contact Us</a>
+          </li>
+        </ul>
       </div>
-      <div class="info-item">
-        <i class="bi bi-telephone-fill"></i>
-        <div>
-          <strong>Phone</strong>
-          <span>+1 302 538 9148</span>
-        </div>
-      </div>
-      <div class="info-item">
-        <i class="bi bi-envelope-fill"></i>
-        <div>
-          <strong>Email</strong>
-          <span>info@datasnapsolutionsinc.com</span>
-        </div>
-      </div>
-    </div>
+
   </div>
 </div>
 
@@ -156,10 +555,32 @@
         <li class="nav-item"><a class="nav-link" href="/pages/pricing.html">Pricing</a></li>
         <li class="nav-item"><a class="nav-link" href="/pages/contact-us.html">Contact Us</a></li>
       </ul>
-    </div>
-  </div>
-</nav>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    </div>
+  </nav>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Sticky Scroll Script -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const nav = document.getElementById('mainNav');
+      const topbar = document.querySelector('.topbar');
+      const stickyPoint = topbar.offsetHeight;
+
+      window.addEventListener("scroll", function () {
+        if (window.scrollY >= stickyPoint) {
+          if (!nav.classList.contains('sticky')) {
+            nav.classList.add('sticky');
+            document.body.style.paddingTop = nav.offsetHeight + 'px';
+          }
+        } else {
+          nav.classList.remove('sticky');
+          document.body.style.paddingTop = '0px';
+        }
+      });
+    });
+  </script>
 </body>
+
 </html>

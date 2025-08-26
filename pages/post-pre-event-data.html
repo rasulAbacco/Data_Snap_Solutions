@@ -1,41 +1,161 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <title>Title</title>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  </head>
-  <body>
-      <div id="navbar"></div>
+<head>
+  <title>Post & Pre Event Data</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-      <h1>Post-Pre Event Data</h1>
-      <p>Leverage our Post-Pre Event Data services for comprehensive event insights.</p>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
-      <div id="footer"></div>
-          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        // Load Navbar dynamically
-        fetch('/pages/navbar.html')
-            .then(res => res.text())
-            .then(data => {
-                document.getElementById('navbar').innerHTML = data;
-            });
+  <!-- Custom CSS -->
+  <style>
+    .hero-section {
+      background-image: url('https://datasnapsolutionsinc.com/img/ev.jpg');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      padding: 100px 0;
+      text-align: center;
+      position: relative;
+    }
 
-        // Load Footer dynamically
-        fetch('/pages/footer.html')
-            .then(res => res.text())
-            .then(data => {
-                document.getElementById('footer').innerHTML = data;
-            });
-    </script>
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-  </body>
+    .hero-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.6);
+    }
+
+    .hero-section h1 {
+      position: relative;
+      z-index: 1;
+      font-size: 2.8rem;
+      font-weight: bold;
+    }
+
+    .section-content {
+      padding: 60px 15px;
+    }
+
+    .btn-custom {
+      background-color: #28a745;
+      color: white;
+      border: 2px solid #1e7e34;
+      margin-bottom: 10px;
+      width: 100%;
+      padding: 10px 15px;
+      border-radius: 5px;
+      transition: all 0.3s ease-in-out;
+      font-weight: 500;
+    }
+
+    .btn-custom:hover {
+      background-color: #218838;
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .section-heading {
+      font-weight: bold;
+      text-transform: uppercase;
+      font-size: 18px;
+      color: #333;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <div id="navbar"></div>
+
+  <!-- Hero Section -->
+  <div class="hero-section">
+    <h1>POST EVENT PRE EVENT DATABASE</h1>
+  </div>
+
+  <!-- Content Section -->
+  <div class="container section-content">
+    <h5 class="text-uppercase font-weight-bold text-secondary mb-4">Copious data but less or no reliable contacts are as
+      good as having no data at all</h5>
+
+    <div class="row">
+      <div class="col-md-8">
+        <h6 class="section-heading">Post-Event Data</h6>
+        <p>
+          Having too much data with very less or no dependable information can only eat up your time. So, event planning
+          has to be coupled with a well-thought-out plan for gathering data from the partakers of the event.
+          Thankfully, we have figured out the numerous ways of achieving this from post-event surveys and digital means
+          like applications. We do a careful analysis of the data we obtained after an event, measuring the ROI, and
+          finding out whether the target audiences attended the event or not. More than anything else, we evaluate what
+          worked and what did not that are very important for building on your success for upcoming events.
+          We have been adopting efficient strategies for collecting and evaluating matrices in order to gauge
+          performance indicators like event ROI. We do everything we can to give you empirical data that has the
+          information of all the clients you are looking for.
+        </p>
+
+        <h6 class="section-heading">Pre-Event Data</h6>
+        <p>
+          The apt time to gathering data is way before participants come to your event. You can start tracking
+          prospective attendees much before they register for the event through ads on social media platforms, including
+          Facebook, Instagram, and Pinterest.
+          Out of these, Facebook has an efficient system of keeping track of people that have interest in your event.
+          With the analytics you derive from Facebook promotional campaigns, you can identify people that have seen or
+          responded to your ad and reach out to prospective participants. We have a colossal pool of verified,
+          contactable data that can be very useful to you. Get in touch with Data Snap Solutions Inc., for accurate
+          pre-event data.
+        </p>
+      </div>
+      <div class="col-md-4 text-center">
+        <img src="https://datasnapsolutionsinc.com/img/ev.jpg" class="img-fluid rounded" alt="Event Image">
+      </div>
+    </div>
+
+    <!-- Email Lists -->
+    <h5 class="text-center font-weight-bold mt-5 mb-4">Some of the Top Selling Event and Expo Attendees Email List</h5>
+    <div class="row">
+      <div class="col-md-4">
+        <button class="btn btn-custom">Hemp & Cannabis Event & Expo Data</button>
+        <button class="btn btn-custom">Builders and Real-Estate Event & Expo Data</button>
+        <button class="btn btn-custom">Finance and Investment Event & Expo Data</button>
+      </div>
+      <div class="col-md-4">
+        <button class="btn btn-custom">Auto Event & Expo Data</button>
+        <button class="btn btn-custom">Healthcare Event & Expo Data</button>
+        <button class="btn btn-custom">Information and Technology Event & Expo Data</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div id="footer"></div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    fetch('/pages/navbar.html')
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById('navbar').innerHTML = data;
+      });
+
+    fetch('/pages/footer.html')
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById('footer').innerHTML = data;
+      });
+  </script>
+
+  <!-- Optional JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+
 </html>

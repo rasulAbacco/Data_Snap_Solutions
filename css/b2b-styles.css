@@ -1,0 +1,125 @@
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: white;
+  color: #333;
+}
+
+.hero-section {
+  background-image: url("https://www.leadspace.com/wp-content/uploads/2024/11/iStock-1204743098-1280x800.jpg");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+}
+
+.hero-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom right,
+    rgba(0, 0, 0, 0.6),
+    rgba(0, 0, 0, 0.3)
+  );
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-content h1 {
+  font-size: 4rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+}
+
+.content-section {
+  padding: 80px 0 40px;
+}
+
+.img-fluid {
+  border-radius: 0;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+}
+
+.top-container {
+  display: flex;
+  gap: 2rem;
+}
+
+.main-text {
+  max-width: 50%;
+  text-align: justify;
+}
+
+.main-text p {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.img-box {
+  margin-top: 1rem;
+}
+
+.middle-container {
+  text-align: justify;
+  margin-bottom: 2rem;
+}
+
+.middle-container p {
+  text-align: justify;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.button-boxes {
+  max-width: 90%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.button-boxes .btn {
+  width: 40%;
+  color: #0044ff;
+  padding: 0.7em 1em;
+  outline: none;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 0.5em;
+  background: #f4f8ff;
+  cursor: pointer;
+  border: 1px solid #f4f8ff;
+  transition: all 0.3s;
+  box-shadow: 3px 3px 9px #c5c5c5, -3px -3px 9px #f6faff;
+  margin-bottom: 2rem;
+}
+.button-boxes .btn:hover {
+ color: #0044ff;
+ transform: translateY(-6px);
+ 
+}
+
+.button-boxes .btn:active {
+  color: #0044ff;
+  box-shadow: inset 4px 4px 12px #c5c5c5, inset -4px -4px 12px #81a5e4;
+  border: none;
+}

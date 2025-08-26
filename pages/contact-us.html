@@ -2,8 +2,8 @@
 <html lang="en">
 
 <head>
-  <title>Contact Us</title>
-  <meta charset="utf-8">
+    <title>Data Snap Solutions</title>
+    <link rel="icon" type="image/x-icon" href="/images/logo-icon.png">  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- Bootstrap 5 CSS -->
@@ -12,7 +12,7 @@
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
-  <!-- Font Awesome Filled Icons -->
+  <!-- Font Awesome -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 
   <style>
@@ -27,7 +27,7 @@
       background-size: cover;
       background-position: center;
       position: relative;
-      height: 60vh;
+      height: 40vh;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -63,6 +63,7 @@
       padding: 30px;
       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
       transition: transform 0.3s ease;
+      height: 100%;
     }
 
     .contact-card:hover {
@@ -72,19 +73,15 @@
     .contact-item {
       display: flex;
       align-items: flex-start;
-      margin-bottom: 20px;
+      margin-bottom: 10px;
+      padding: 20px;
     }
 
     .contact-icon {
       font-size: 1.8rem;
       color: #0044ff;
-      margin-right: 15px;
+      margin-right: 35px;
       flex-shrink: 0;
-      transition: transform 0.3s ease;
-    }
-
-    .contact-card:hover {
-      transform: scale(1.05);
     }
 
     .contact-card h4 {
@@ -98,39 +95,33 @@
     }
 
     .social-icons {
-     display: flex;
-     width: 100%;
-     justify-content: center;
-     gap: 2rem;
+      display: flex;
+      width: 100%;
+      justify-content: center;
+      gap: 1rem;
+      margin-right: 65px;
     }
 
     .social-icons a {
       font-size: 1.5rem;
-      margin-right: 15px;
+      margin: 0 20px;
       color: #0044ff;
       transition: transform 0.3s ease, color 0.3s ease;
     }
 
     .social-icons a:hover {
-      transform: scale(1.5) rotate(360deg);
-      /* Use rotate with 'deg' */
-      color: #0044ff;
-      /* Optional, keeps color on hover */
-    }
-
-    .social-icons a:hover {
-      animation: spin 0.5s linear;
+      transform: scale(1.3);
       color: #0044ff;
     }
 
-    @keyframes spin {
-      from {
-        transform: scale(1.5) rotate(0deg);
-      }
+    /* Form button */
+    .btn-primary {
+      background-color: #0044ff;
+      border: none;
+    }
 
-      to {
-        transform: scale(1.5) rotate(360deg);
-      }
+    .btn-primary:hover {
+      background-color: #0033cc;
     }
   </style>
 </head>
@@ -146,16 +137,44 @@
     </div>
   </section>
 
-  <!-- Contact Info Section -->
+  <!-- Contact Section -->
   <section class="contact-section container">
-    <div class="row justify-content-center">
-      <div class="col-md-8">
+    <div class="row g-4">
+      
+      <!-- Contact Form (Left Side) -->
+      <div class="col-lg-6">
+        <div class="contact-card">
+          <h4 class="mb-4 fw-bold">Send us a Message</h4>
+          <form>
+            <div class="mb-3">
+              <label class="form-label">Full Name</label>
+              <input type="text" class="form-control" placeholder="Your Name" required>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Email Address</label>
+              <input type="email" class="form-control" placeholder="you@example.com" required>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Phone</label>
+              <input type="tel" class="form-control" placeholder="+1 234 567 890">
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Message</label>
+              <textarea class="form-control" rows="5" placeholder="Type your message..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Send Message</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Contact Info (Right Side) -->
+      <div class="col-lg-6">
         <div class="contact-card">
           <h4 class="mb-4 fw-bold">Contact Info</h4>
 
           <div class="contact-item">
             <i class="fas fa-location-dot contact-icon"></i>
-            <div class="contact-text">3624 Silverside Road Suite 305, Wilmington, Delaware 19810-4929</div>
+            <div class="contact-text">3624 Silverside Road Suite 305, <br> Wilmington, <br> Delaware 19810-4929</div>
           </div>
 
           <div class="contact-item">
@@ -171,7 +190,7 @@
           <div class="contact-item social-icons mt-3">
             <a href="#"><i class="fab fa-facebook"></i></a>
             <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="https://www.linkedin.com/in/data-snap-solutions-inc-b4b869207/"><i class="fab fa-linkedin"></i></a>
           </div>
         </div>
       </div>
@@ -199,5 +218,4 @@
   </script>
 
 </body>
-
 </html>

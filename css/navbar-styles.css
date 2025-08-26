@@ -48,9 +48,10 @@ body {
   );
   pointer-events: none;
 }
+ 
 
 .topbar .logo img {
-  height: 80px;
+ 
   filter: drop-shadow(0 4px 8px var(--shadow-light));
   transition: transform 0.3s ease;
 }

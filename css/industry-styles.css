@@ -1,3 +1,5 @@
+/* Base Styles (already provided) */
+
 .hero-section {
   background-image: url("https://datasnapsolutionsinc.com/assets/images/services/energy-envernament.jpg");
   background-size: cover;
@@ -60,17 +62,18 @@
 }
 
 .main-div h3 {
-    color: #0044ff;
-    margin-bottom: 2rem !important;
+  color: #0044ff;
+  margin-bottom: 2rem !important;
 }
+
 .main-content {
-    display: flex;
-    gap: 2rem;
+  display: flex;
+  gap: 2rem;
 }
 
 .top-text {
-    max-width: 50%;
-    text-align: justify;
+  max-width: 50%;
+  text-align: justify;
 }
 
 .button-boxes {
@@ -109,7 +112,70 @@
   border: none;
 }
 
+.btn-title {
+  color: #0044ff;
+}
 
-.btn-title{
-    color: #0044ff;
+/* ============================= */
+/*         MEDIA QUERIES        */
+/* ============================= */
+
+/* Tablets */
+@media (max-width: 992px) {
+  .hero-section h1 {
+    font-size: 2.4rem;
+  }
+
+  .main-content {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .top-text {
+    max-width: 100%;
+  }
+
+  .button-boxes .btn {
+    width: 45%;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .hero-section {
+    height: 60vh;
+    padding: 0 1rem;
+  }
+
+  .hero-section h1 {
+    font-size: 1.8rem;
+  }
+
+  .section-content {
+    padding: 40px 10px;
+  }
+
+  .btn-custom {
+    font-size: 14px;
+    padding: 0.6rem;
+  }
+
+  .main-content {
+    flex-direction: column;
+  }
+
+  .top-text {
+    font-size: 15px;
+    max-width: 100%;
+  }
+
+  .button-boxes {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .button-boxes .btn {
+    width: 100%;
+    font-size: 15px;
+  }
 }

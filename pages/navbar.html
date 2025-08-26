@@ -1,21 +1,24 @@
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Data Snap Solutions</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
   <style>
     :root {
-      --primary-blue: #0046FF;
-      --primary-purple: #6366F1;
-      --primary-pink: #EC4899;
-      --dark-blue: #1E293B;
-      --light-gray: #F8FAFC;
-      --gray-200: #E2E8F0;
-      --gray-400: #94A3B8;
-      --white: #FFFFFF;
+      --primary-blue: #0046ff;
+      --primary-purple: #6366f1;
+      --primary-pink: #ec4899;
+      --dark-blue: #1e293b;
+      --light-gray: #f8fafc;
+      --gray-200: #e2e8f0;
+      --gray-400: #94a3b8;
+      --white: #ffffff;
       --glass-bg: rgba(255, 255, 255, 0.1);
       --glass-border: rgba(255, 255, 255, 0.18);
       --shadow-light: rgba(0, 70, 255, 0.15);
@@ -30,42 +33,9 @@
 
     body {
       font-family: 'Inter', sans-serif;
-      background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-      min-height: 100vh;
-      color: #333;
     }
 
-    /* Loading Bar */
-    .loading-bar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 3px;
-      background: linear-gradient(90deg,
-          var(--primary-blue),
-          rgba(255, 255, 255, 0.5),
-          var(--primary-blue));
-      transform: scaleX(0);
-      transform-origin: left;
-      animation: loading 2s ease-in-out infinite;
-      z-index: 9999;
-    }
-
-    @keyframes loading {
-      0% {
-        transform: scaleX(0);
-      }
-
-      50% {
-        transform: scaleX(1);
-      }
-
-      100% {
-        transform: scaleX(0);
-      }
-    }
-
+    /* Keep Original Topbar Styles Exactly */
     /* Topbar */
     .topbar {
       background: rgba(255, 255, 255, 0.95);
@@ -171,22 +141,13 @@
     }
 
     .mobile-menu-btn {
-      background: rgba(255, 255, 255, 0.2);
+      display: none;
+      background: none;
       border: none;
-      border-radius: 10px;
-      padding: 8px 12px;
-      backdrop-filter: blur(10px);
-      transition: all 0.3s ease;
-    }
-
-    .mobile-menu-btn:hover {
-      background: rgba(255, 255, 255, 0.3);
-      transform: scale(1.05);
-    }
-
-    .mobile-menu-btn i {
-      color: var(--primary-blue);
       font-size: 24px;
+      color: #333;
+      cursor: pointer;
+      padding: 8px;
     }
 
     /* Main Navigation */
@@ -201,62 +162,19 @@
       transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
-    .main-nav::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: linear-gradient(90deg,
-          rgba(255, 255, 255, 0.1) 0%,
-          transparent 50%,
-          rgba(255, 255, 255, 0.1) 100%);
-      opacity: 0;
-      transition: opacity 0.3s ease;
-    }
-
-    .main-nav:hover::before {
-      opacity: 1;
-    }
-
-    .main-nav.sticky {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      background: rgba(0, 70, 255, 0.98);
-      box-shadow: 0 8px 32px var(--shadow-heavy);
-      animation: slideDown 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-
-    @keyframes slideDown {
-      from {
-        transform: translateY(-100%);
-        opacity: 0;
-      }
-
-      to {
-        transform: translateY(0);
-        opacity: 1;
-      }
-    }
-
     .nav-container {
-      max-width: 1200px;
+      max-width: 90%;
       margin: 0 auto;
-      padding: 0 20px;
+      padding: 0 15px;
     }
 
-    .nav-menu {
-      display: flex;
-      list-style: none;
-      gap: 2rem;
-      align-items: center;
+    .navbar {
+      padding: 0;
     }
 
-    .nav-item {
-      position: relative;
+    .navbar-nav {
+      gap: 5px;
+      margin: 5px 0;
     }
 
     .nav-link {
@@ -265,11 +183,12 @@
       text-transform: uppercase;
       font-size: 14px;
       letter-spacing: 0.5px;
-      padding: 18px 20px !important;
+      padding: 10px 15px !important;
       position: relative;
       transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
       border-radius: 8px;
       overflow: hidden;
+      margin: 10px 0px;
     }
 
     .nav-link::before {
@@ -279,10 +198,7 @@
       left: 50%;
       width: 0;
       height: 3px;
-      background: linear-gradient(90deg,
-          transparent,
-          var(--white),
-          transparent);
+      background: linear-gradient(90deg, transparent, var(--white), transparent);
       transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
       transform: translateX(-50%);
       border-radius: 2px;
@@ -314,120 +230,136 @@
       color: var(--white) !important;
     }
 
-    /* Dropdown Menu */
     .dropdown-menu {
-      background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      border: 1px solid var(--glass-border);
-      border-radius: 15px;
-      box-shadow: 0 20px 40px var(--shadow-light);
-      padding: 10px 0;
-      margin-top: 10px;
-      min-width: 250px;
-      animation: dropdownSlide 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-
-    @keyframes dropdownSlide {
-      from {
-        opacity: 0;
-        transform: translateY(-10px) scale(0.95);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-      }
+      border: none;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+      border-radius: 8px;
+      padding: 8px 0;
+      min-width: 200px;
     }
 
     .dropdown-item {
-      color: #333;
-      padding: 12px 20px;
-      font-weight: 500;
-      transition: all 0.3s ease;
-      border-radius: 10px;
-      margin: 2px 10px;
-      position: relative;
-      overflow: hidden;
+      padding: 10px 20px;
+      font-size: 14px;
+      transition: all 0.2s ease;
     }
 
-    .dropdown-item::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg,
-          transparent,
-          var(--primary-blue),
-          transparent);
-      opacity: 0.1;
-      transition: left 0.5s ease;
-    }
-
-    .dropdown-item:hover::before {
-      left: 100%;
-    }
-
-    .dropdown-item:hover {
-      background: rgba(0, 70, 255, 0.1);
-      color: var(--primary-blue);
-      transform: translateX(5px);
+    .dropdown-item:hover,
+    .dropdown-item:focus {
+      background: #f8f9fa;
+      color: #007bff;
     }
 
     /* Mobile Styles */
     @media (max-width: 991.98px) {
-      .topbar {
-        padding: 15px 0;
-      }
-
       .info-grid {
         display: none;
       }
 
-      .topbar .logo img {
-        height: 60px;
+      .mobile-menu-btn {
+        display: block;
       }
 
       .navbar-collapse {
-        background: rgba(0, 70, 255, 0.98);
-        backdrop-filter: blur(20px);
-        border-radius: 15px;
+        background: white;
         margin-top: 10px;
-        padding: 20px;
-        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-top: 1px solid #dee2e6;
+        padding-top: 15px;
+      }
+
+      .navbar-nav {
+        margin: 0;
       }
 
       .nav-link {
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        margin-bottom: 5px;
-        border-radius: 8px;
+        padding: 15px 0 !important;
+        border-radius: 0 !important;
+        border-bottom: 1px solid #f0f0f0;
+        margin: 0 !important;
       }
 
       .dropdown-menu {
-        background: rgba(0, 70, 255, 0.9);
-        border: 1px solid rgba(255, 255, 255, 0.2);
+        position: static !important;
+        transform: none !important;
+        box-shadow: none;
+        background: #f8f9fa;
+        margin: 0;
+        border-radius: 0;
+        border: none;
+        padding: 0;
       }
 
       .dropdown-item {
-        color: var(--white);
-        margin: 2px 0;
+        padding: 12px 20px;
+        border-bottom: 1px solid #e9ecef;
+        background: #f8f9fa;
       }
 
-      .dropdown-item:hover {
-        background: rgba(255, 255, 255, 0.2);
-        color: var(--white);
+      .dropdown-item:last-child {
+        border-bottom: none;
       }
+    }
+
+    @media (max-width: 768px) {
+      .topbar-container {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+      }
+
+      .logo img {
+        height: 40px;
+      }
+
+      .info-grid {
+        display: flex !important;
+        gap: 15px;
+        justify-content: center;
+      }
+
+      .info-card {
+        font-size: 13px;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .topbar-container {
+        padding: 10px;
+      }
+
+      .info-grid {
+        flex-direction: column !important;
+        gap: 10px !important;
+        align-items: center;
+      }
+
+      .info-card {
+        justify-content: center;
+      }
+    }
+
+    /* Demo Content */
+    .demo-content {
+      padding: 60px 20px;
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .demo-content h1 {
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    .demo-content p {
+      color: #666;
+      line-height: 1.8;
     }
   </style>
 </head>
 
 <body>
-  <!-- Loading Bar -->
-  <div class="loading-bar"></div>
-
-  <!-- Topbar -->
+  <!-- Keep Original Topbar Structure -->
   <header class="topbar">
     <div class="topbar-container">
       <div class="logo">
@@ -463,78 +395,114 @@
         </div>
       </div>
 
-      <button class="mobile-menu-btn" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavMenu">
+      <button class="mobile-menu-btn navbar-toggler" type="button" data-bs-toggle="collapse"
+        data-bs-target="#mainNavMenu" aria-controls="mainNavMenu" aria-expanded="false" aria-label="Toggle navigation">
         <i class="fas fa-bars"></i>
       </button>
     </div>
-
   </header>
 
-  <!-- Main Navigation -->
-  <nav class="main-nav" id="mainNav">
+  <!-- Main Navigation with Bootstrap Structure -->
+  <nav class="main-nav">
     <div class="nav-container">
-      <div class="collapse navbar-collapse justify-content-center" id="mainNavMenu">
-        <ul class="nav-menu">
-          <li class="nav-item">
-            <a class="nav-link" href="/">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/pages/about.html">About Us</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Data Services</a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="/pages/b2b-data.html">B2B Data</a></li>
-              <li><a class="dropdown-item" href="/pages/tech-data.html">Technology Data</a></li>
-              <li><a class="dropdown-item" href="/pages//key-design-data.html">Key Decision Makers</a></li>
-              <li><a class="dropdown-item" href="/pages/industry.html">Industry Data</a></li>
-              <li><a class="dropdown-item" href="/pages/healthcare.html">Healthcare Data</a></li>
-              <li><a class="dropdown-item" href="/pages/post-pre-event-data.html">Post/Pre Event</a></li>
-            </ul>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Data Solutions</a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="/pages/data-append.html">Data Append</a></li>
-              <li><a class="dropdown-item" href="/pages/email-append.html">Email Append</a></li>
-              <li><a class="dropdown-item" href="/pages/email-marketing.html">Email Marketing</a></li>
-            </ul>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/pages/pricing.html">Pricing</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/pages/contact-us.html">Contact Us</a>
-          </li>
-        </ul>
+      <div class="navbar navbar-expand-lg">
+        <div class="collapse navbar-collapse justify-content-center" id="mainNavMenu">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/pages/about.html">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/pages/how-we-source-our-data.html">source our data</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Data Services
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="/pages/b2b-data.html">B2B Data</a></li>
+                <li><a class="dropdown-item" href="/pages/tech-data.html">Technology Data</a></li>
+                <li><a class="dropdown-item" href="/pages/key-design-data.html">Key Decision Makers</a></li>
+                <li><a class="dropdown-item" href="/pages/industry.html">Industry Data</a></li>
+                <li><a class="dropdown-item" href="/pages/healthcare.html">Healthcare Data</a></li>
+                <li><a class="dropdown-item" href="/pages/post-pre-event-data.html">Post/Pre Event</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Data Solutions
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="/pages/data-append.html">Data Append</a></li>
+                <li><a class="dropdown-item" href="/pages/email-append.html">Email Append</a></li>
+                <li><a class="dropdown-item" href="/pages/email-marketing.html">Email Marketing</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <!-- <a class="nav-link" href="/pages/case-study">Case Study</a> -->
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/pages/pricing.html">Pricing</a>
+            </li>
+            <!-- <li class="nav-item">
+              <a class="nav-link" href="/pages/product-packages">Product & Packages</a>
+            </li> -->
+            <li class="nav-item">
+              <a class="nav-link" href="/pages/contact-us.html">Contact Us</a>
+            </li>
+          </ul>
+        </div>
       </div>
-
     </div>
-    </div>
+  </nav>
 
+  
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+      const navCollapse = document.getElementById('mainNavMenu');
+      const menuIcon = mobileMenuBtn.querySelector('i');
 
-    <!-- Sticky Scroll Script -->
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const nav = document.getElementById('mainNav');
-        const topbar = document.querySelector('.topbar');
-        const stickyPoint = topbar.offsetHeight;
-
-        window.addEventListener("scroll", function () {
-          if (window.scrollY >= stickyPoint) {
-            if (!nav.classList.contains('sticky')) {
-              nav.classList.add('sticky');
-              document.body.style.paddingTop = nav.offsetHeight + 'px';
-            }
+      // Toggle hamburger icon
+      mobileMenuBtn.addEventListener('click', function () {
+        setTimeout(() => {
+          if (navCollapse.classList.contains('show')) {
+            menuIcon.classList.remove('fa-bars');
+            menuIcon.classList.add('fa-times');
           } else {
-            nav.classList.remove('sticky');
-            document.body.style.paddingTop = '0px';
+            menuIcon.classList.remove('fa-times');
+            menuIcon.classList.add('fa-bars');
+          }
+        }, 100);
+      });
+
+      // Reset icon when window is resized to desktop
+      window.addEventListener('resize', function () {
+        if (window.innerWidth > 991) {
+          menuIcon.classList.remove('fa-times');
+          menuIcon.classList.add('fa-bars');
+        }
+      });
+
+      // Close menu when clicking nav links on mobile
+      document.querySelectorAll('.nav-link:not(.dropdown-toggle)').forEach(link => {
+        link.addEventListener('click', () => {
+          if (window.innerWidth <= 991) {
+            navCollapse.classList.remove('show');
+            menuIcon.classList.remove('fa-times');
+            menuIcon.classList.add('fa-bars');
           }
         });
       });
-    </script>
+    });
+  </script>
 </body>
 
 </html>

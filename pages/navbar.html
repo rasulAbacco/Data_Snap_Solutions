@@ -509,78 +509,32 @@
         </ul>
       </div>
 
-  </div>
-</div>
-
-
-<!-- 🔹 Main Navbar -->
-<nav class="navbar navbar-expand-lg ">
-  <div class="container">
-    <!-- Toggler -->
-    <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <!-- Navbar Links -->
-    <div class="collapse navbar-collapse " id="mainNavbar">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="/pages/about.html">About Us</a></li>
-
-        <!-- Data Services Dropdown -->
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Data Services</a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="/pages/b2b-data.html">B2B Data</a></li>
-            <li><a class="dropdown-item" href="/pages/tech-data.html">Technology Data</a></li>
-            <li><a class="dropdown-item" href="/pages/key-design-data.html">Key Decision Makers Data</a></li>
-            <li><a class="dropdown-item" href="/pages/healthcare.html">Healthcare Data</a></li>
-            <li><a class="dropdown-item" href="/pages/industry.html">Industry Data</a></li>
-            <li><a class="dropdown-item" href="/pages/post-pre-event-data.html">Post Event / Pre Event Database</a></li>
-
-
-          </ul>
-        </li>
-
-        <!-- Data Solutions Dropdown -->
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Data Solutions</a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="/pages/data-append.html">Data Append</a></li>
-            <li><a class="dropdown-item" href="/pages/email-append.html">Email Append</a></li>
-            <li><a class="dropdown-item" href="/pages/email-marketing.html">Email Marketing Programs</a></li>
-          </ul>
-        </li>
-
-        <li class="nav-item"><a class="nav-link" href="/pages/pricing.html">Pricing</a></li>
-        <li class="nav-item"><a class="nav-link" href="/pages/contact-us.html">Contact Us</a></li>
-      </ul>
-
     </div>
-  </nav>
+    </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
-  <!-- Sticky Scroll Script -->
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const nav = document.getElementById('mainNav');
-      const topbar = document.querySelector('.topbar');
-      const stickyPoint = topbar.offsetHeight;
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
-      window.addEventListener("scroll", function () {
-        if (window.scrollY >= stickyPoint) {
-          if (!nav.classList.contains('sticky')) {
-            nav.classList.add('sticky');
-            document.body.style.paddingTop = nav.offsetHeight + 'px';
+    <!-- Sticky Scroll Script -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const nav = document.getElementById('mainNav');
+        const topbar = document.querySelector('.topbar');
+        const stickyPoint = topbar.offsetHeight;
+
+        window.addEventListener("scroll", function () {
+          if (window.scrollY >= stickyPoint) {
+            if (!nav.classList.contains('sticky')) {
+              nav.classList.add('sticky');
+              document.body.style.paddingTop = nav.offsetHeight + 'px';
+            }
+          } else {
+            nav.classList.remove('sticky');
+            document.body.style.paddingTop = '0px';
           }
-        } else {
-          nav.classList.remove('sticky');
-          document.body.style.paddingTop = '0px';
-        }
+        });
       });
-    });
-  </script>
+    </script>
 </body>
 
 </html>

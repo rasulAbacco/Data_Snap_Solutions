@@ -1,19 +1,17 @@
 body {
   font-family: "Poppins", sans-serif;
-  background-color: white;
+  background-color: #f8f9fa;
   color: #333;
 }
-
 .hero-section {
-  background-image: url("https://www.leadspace.com/wp-content/uploads/2024/11/iStock-1204743098-1280x800.jpg");
+  background-image: url("https://datasnapsolutionsinc.com/assets/images/services/ICT-managment.jpg");
   background-size: cover;
   background-position: center;
+  height: 80vh;
   position: relative;
-  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
   text-align: center;
 }
 
@@ -21,76 +19,29 @@ body {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    to bottom right,
-    rgba(0, 0, 0, 0.6),
-    rgba(0, 0, 0, 0.3)
-  );
+  background: rgba(0, 0, 0, 0.6); /* dark overlay */
   z-index: 1;
 }
 
+/* NEW: Content over the overlay */
 .hero-content {
   position: relative;
   z-index: 2;
+  color: #fff;
 }
 
 .hero-content h1 {
   font-size: 4rem;
-  font-weight: 700;
-  margin-bottom: 20px;
+  font-weight: bold;
+  color: #fff;
 }
 
-.hero-content p {
-  font-size: 1.2rem;
-}
-
-.content-section {
-  padding: 80px 0 40px;
-}
-
-.img-fluid {
-  border-radius: 0;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-}
-
-.container {
-  display: flex;
-  flex-direction: column;
-  margin-top: 2rem;
-}
-
-.top-container {
-  display: flex;
-  gap: 2rem;
-}
-
-.main-text {
-  max-width: 50%;
-  text-align: justify;
-}
-
-.main-text p {
-  font-size: 16px;
-  font-weight: 400;
-}
-
-.img-box {
-  margin-top: 1rem;
-}
-
-.middle-container {
-  text-align: justify;
-  margin-bottom: 2rem;
-}
-
-.middle-container p {
-  text-align: justify;
-  font-size: 16px;
-  font-weight: 400;
+.data-section {
+  padding: 60px 0;
 }
 
 .button-boxes {
-  max-width: 90%;
+  max-width: 100%;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -98,7 +49,7 @@ body {
 }
 
 .button-boxes .btn {
-  width: 40%;
+  width: 45%;
   color: #0044ff;
   padding: 0.7em 1em;
   outline: none;
@@ -110,8 +61,10 @@ body {
   border: 1px solid #f4f8ff;
   transition: all 0.3s;
   box-shadow: 3px 3px 9px #c5c5c5, -3px -3px 9px #f6faff;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
+  text-align: center;
 }
+
 .button-boxes .btn:hover {
   color: #0044ff;
   transform: translateY(-6px);
@@ -121,4 +74,22 @@ body {
   color: #0044ff;
   box-shadow: inset 4px 4px 12px #c5c5c5, inset -4px -4px 12px #81a5e4;
   border: none;
+}
+.main-div {
+  display: flex;
+  flex-direction: column;
+}
+
+.main-div h3 {
+  color: #0044ff;
+  margin-bottom: 2rem !important;
+}
+.main-content {
+  display: flex;
+  gap: 2rem;
+}
+
+.top-text {
+  max-width: 50%;
+  text-align: justify;
 }

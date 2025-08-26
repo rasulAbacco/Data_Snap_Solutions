@@ -1,41 +1,93 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <title>Title</title>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  </head>
-  <body>
-      <div id="navbar"></div>
+<head>
+  <title>B2B Data Solutions</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <h1>B2B Data Solutions</h1>
-      <p>Welcome to our B2B data solutions page!</p>
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/b2b-styles.css">
+</head>
 
-      <div id="footer"></div>
-          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        // Load Navbar dynamically
-        fetch('/pages/navbar.html')
-            .then(res => res.text())
-            .then(data => {
-                document.getElementById('navbar').innerHTML = data;
-            });
+<body>
 
-        // Load Footer dynamically
-        fetch('/pages/footer.html')
-            .then(res => res.text())
-            .then(data => {
-                document.getElementById('footer').innerHTML = data;
-            });
-    </script>
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-  </body>
+  <div id="navbar"></div>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-content">
+      <h1>B2B DATA SOLUTIONS</h1>
+      <p class="lead">Empowering marketers with precision-targeted data</p>
+    </div>
+  </section>
+
+  <!-- Content Section -->
+
+  <div class="container">
+    <div class="top-container" >
+      <div class="main-text">
+        <p>B2B companies are making their way to data and analytics in order to pick up the pace of the buying process
+          and accomplish profitable growth. It is tough to remain in business today without knowing how vital they are
+          when it comes to making decisions. Nevertheless, without having a solid understanding of the merits of data
+          integration, it is tough to fathom its usefulness in B2B lead generation.</p>
+
+        <p>All through the twentieth century, marketers would carry out advertising campaigns targeted at the widest
+          possible database of prospects, in an effort to lure them with their brands. However, in the twenty first
+          century, marketers have attained a higher competence. They are able to determine the prospective customers,
+          develop content to interact with them, and automate communication throughout their buying journey. At its
+          simplest, even a piece of pre-eminent B2B marketing software is futile if it does not have useful data.
+          Marketers have to breathe data-driven strategy and make the most of B2B data.</p>
+      </div>
+      <div class="img-box">
+        <img src="https://datasnapsolutionsinc.com/img/s1.jpg" alt="B2B Data" class="img-fluid w-100">
+      </div>
+    </div>
+    <div class="middle-container">
+      <p>Technology is lifeless if data does not blow breath into it. However, not all B2B database are created and
+        structured in the same fashion. It has to be fastidious, qualitative, and accurate to bring success to your
+        organization.</p>
+
+      <p>At Data Snap Solutions Inc., our marketers, committed to data-driven marketing, are the drivers of our
+        company who understand and deliver what our customers want. We can make the ideal data from all Industries
+        available to you that will make you get in touch with maximum prospects. We give data based on various factors
+        such as job position, demography, and nature of the job.</p>
+    </div>
+    <div>
+      <div class="button-boxes">
+        <button class="btn btn-yellow">Industry-wise Mailing List</button>
+        <button class="btn btn-yellow">Professional Email List</button>
+        <button class="btn btn-yellow">Geo Targeted Mailing Lists</button>
+        <button class="btn btn-green">Healthcare Email Database</button>
+        <button class="btn btn-green">Technology Users Email Database</button>
+        <button class="btn btn-green">Real Estate Industry Email List & Others</button>
+      </div>
+    </div>
+  </div>
+
+
+  <div id="footer"></div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Dynamic Navbar/Footer -->
+  <script>
+    fetch('/pages/navbar.html')
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById('navbar').innerHTML = data;
+      });
+
+    fetch('/pages/footer.html')
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById('footer').innerHTML = data;
+      });
+  </script>
+
+</body>
+
 </html>

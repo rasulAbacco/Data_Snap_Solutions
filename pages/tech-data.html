@@ -1,41 +1,191 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <title>Title</title>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  </head>
-  <body>
-      <div id="navbar"></div>
+<head>
+  <title>Technology Data</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-     <h1>Technology Data</h1>
-     <p>Explore our comprehensive Technology Data solutions.</p>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
-      <div id="footer"></div>
-          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        // Load Navbar dynamically
-        fetch('/pages/navbar.html')
-            .then(res => res.text())
-            .then(data => {
-                document.getElementById('navbar').innerHTML = data;
-            });
+  <style>
+    .hero-section {
+      background-image: url('https://datasnapsolutionsinc.com/assets/images/services/factory-consultent.jpg');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      padding: 100px 0;
+      text-align: center;
+      position: relative;
+    }
 
-        // Load Footer dynamically
-        fetch('/pages/footer.html')
-            .then(res => res.text())
-            .then(data => {
-                document.getElementById('footer').innerHTML = data;
-            });
-    </script>
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-  </body>
+    .hero-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.6);
+    }
+
+    .hero-section h1 {
+      position: relative;
+      z-index: 1;
+      font-size: 3rem;
+      font-weight: bold;
+    }
+
+    .btn-green {
+      background-color: #28a745;
+      color: white;
+      margin: 5px;
+    }
+
+    .btn-lightgreen {
+      background-color: #6cc24a;
+      color: white;
+      margin: 5px;
+    }
+
+    .data-section {
+      padding: 60px 0;
+    }
+
+    .card-btn {
+      margin: 5px;
+      background-color: #f8f9fa;
+      border: 1px solid #ddd;
+      padding: 10px 15px;
+      display: inline-block;
+      border-radius: 5px;
+    }
+
+    .card-btn:hover {
+      background-color: #e2e6ea;
+    }
+
+    .data-table {
+      margin-top: 30px;
+      background-color: #f8f9fa;
+      padding: 20px;
+      border-radius: 5px;
+    }
+
+    .data-table h5 {
+      font-weight: 600;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="navbar"></div>
+
+  <!-- Hero Section -->
+  <div class="hero-section">
+    <h1>TECHNOLOGY DATA</h1>
+  </div>
+
+  <!-- Main Content Section -->
+  <div class="container data-section">
+    <div class="row">
+      <div class="col-md-8">
+        <h5 class="mb-3 font-weight-bold">FAST-CHARGE YOUR DECISION-MAKING WITH IT DECISION-MAKERS’ CONTACTS</h5>
+        <p>Technology Decision Makers belong to a different realm because leaders require different sets of skills in
+          the IT industry. To be in touch with IT executives and top tech-industry professionals, it is imperative to be
+          cognizant of their identities, whereabouts, and, most importantly, how to quickly develop contact with them.
+        </p>
+        <p>If you are trying hard to have contact with IT decision makers and executives in corporate technology
+          companies, then count on Data Snap Solutions Inc. The Technology Services List we offer comprises key IT
+          leaders and the most authoritative top-level IT executives from all industries in corporate companies in
+          America, Canada, the UK, and Australia.</p>
+        <p>Your efforts in marketing will go futile if you do not have that knack of connecting with the right people.
+          You want to contact the key decision makers who have the authority as well as the potency to galvanize someone
+          into action. This is where Data Snap Solutions Inc., comes in. We give the data having the contacts of movers
+          and shakers, the statesmen of the IT industry.</p>
+      </div>
+      <div class="col-md-4 text-center">
+        <img src="https://datasnapsolutionsinc.com/assets/images/services/factory-consultent.jpg"
+          class="img-fluid rounded" alt="Technology Data">
+      </div>
+    </div>
+
+    <!-- Service Buttons -->
+    <div class="text-center mt-5">
+      <button class="btn btn-green">DevOps (Software Development & Operations)</button>
+      <button class="btn btn-green">Support</button>
+      <button class="btn btn-green">Data Center and IT Operations</button>
+      <button class="btn btn-green">Website Design & Development</button>
+      <button class="btn btn-green">Network and Data Communications</button>
+      <button class="btn btn-green">IT Security</button>
+    </div>
+
+    <!-- Top Selling Technology Data -->
+    <div class="mt-5">
+      <h5 class="font-weight-bold">TOP SELLING TECHNOLOGY DATA</h5>
+      <div>
+        <span class="card-btn">QuickBooks Users Email List</span>
+        <span class="card-btn">AutoDesk Users Mailing Lists</span>
+        <span class="card-btn">List of companies using Office 365</span>
+        <span class="card-btn">Companies that use Salesforce CRM</span>
+        <span class="card-btn">ADP Clients List</span>
+        <span class="card-btn">Full List of companies that use App</span>
+        <span class="card-btn">Hadoop Users Mailing List</span>
+        <span class="card-btn">iCims Users Marketing Database</span>
+        <span class="card-btn">IBM Users List</span>
+        <span class="card-btn">ServiceNow Customers Email List</span>
+        <span class="card-btn">Tableau Clients Contact Database</span>
+        <span class="card-btn">VMWare Customers Database</span>
+        <span class="card-btn">NetSuite Users List</span>
+        <span class="card-btn">Yardi Voyager Contact List</span>
+        <span class="card-btn">Value Added Resellers Contact Data</span>
+        <span class="card-btn">IBM SPSS Users Mailing Database</span>
+      </div>
+    </div>
+
+    <!-- USA Contact Data Table -->
+    <div class="data-table mt-5">
+      <h5 class="mb-4">USA TECHNOLOGY CONTACT DATA</h5>
+      <div class="row">
+        <div class="col-md-4">
+          <p><strong>USA Total Technology Contacts:</strong> 10,481,131</p>
+        </div>
+        <div class="col-md-4">
+          <p><strong>Technology Contacts With Postal & Phones:</strong> 8,639,582</p>
+        </div>
+        <div class="col-md-4">
+          <p><strong>List of Companies:</strong> 233,446</p>
+          <p><strong>List of Companies with Contacts:</strong> 555,681</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="footer"></div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Load Navbar dynamically
+    fetch('/pages/navbar.html')
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById('navbar').innerHTML = data;
+      });
+
+    // Load Footer dynamically
+    fetch('/pages/footer.html')
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById('footer').innerHTML = data;
+      });
+  </script>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+
 </html>

@@ -1,26 +1,70 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>Title</title>
-    <!-- Required meta tags -->
+    <title>Data Snap Solutions</title>
+    <link rel="icon" type="image/x-icon" href="/images/logo-icon.png">    <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <style>
+    .list-unstyled a
+    {
+      color: #fff;
+      padding-bottom: 8px;
+    }
+    .list-unstyled a:hover
+    {
+      text-decoration: none;
+    }
+.footer-logo {
+  display: flex;
+  flex-direction: column;     /* stack logo rows vertically */
+  align-items: center;        /* center rows horizontally */
+  gap: 20px;                  /* space between rows */
+  text-align: center;
+}
+
+.footer-logo img {
+  width: 60px;                /* consistent size */
+  height: auto;               /* keep proportions */
+  object-fit: contain;        /* no stretching */
+  margin: 0 10px;             /* spacing between logos */
+  transition: transform 0.3s ease;
+}
+
+.footer-logo img:hover {
+  transform: scale(1.1);      /* subtle zoom on hover */
+}
+
+.logo-1,
+.logo-2 {
+  display: flex;
+  justify-content: center;    /* center logos in row */
+  align-items: center;
+  gap: 20px;                  /* space between each logo */
+}
+.secure
+{
+  height: 200px;
+}
+
+  </style>
+  
   </head>
   <body>
 
     <footer class="text-white pt-5" style="background-color:#0a165a;">
-  <div class="container">
+  <div class="ml-5 mr-5">
     <div class="row">
-      
+
       <!-- About Us -->
-      <div class="col-md-4 mb-4">
+      <div class="col-md-3 mb-4">
         <h5 class="fw-bold mb-3">ABOUT US</h5>
         <div class="mb-2" style="height:2px; width:40px; background:#2ecc71;"></div>
         <p>
-          Data Snap Solutions Inc., US-based data solutions provider, headquartered in Willington, Delaware.
+          Data Snap Solutions Inc. US-based data solutions provider, headquartered in Willington, Delaware.
         </p>
         <p>
           Working hand in hand with companies to achieve profitable growth and being a backbone in providing the world’s most comprehensive B2B database.
@@ -28,24 +72,44 @@
       </div>
 
       <!-- Company Links -->
-      <div class="col-md-4 mb-4">
+      <div class="col-md-3 mb-4">
         <h5 class="fw-bold mb-3">COMPANY LINKS</h5>
         <div class="mb-2" style="height:2px; width:40px; background:#2ecc71;"></div>
-        <ul class="list-unstyled">
-          <li>» B2B Data</li>
-          <li>» Key Decision Makers Data</li>
-          <li>» Post Event / Pre Event Database</li>
-          <li>» Email Marketing Programs</li>
-          <li>» Technology Data</li>
-          <li>» Industry Data</li>
-          <li>» Healthcare Data</li>
-          <li>» Data Append</li>
-          <li>» Email Append</li>
+        <ul class="list-unstyled d-flex">
+        <div class="">
+          <li><a href="/pages/b2b-data.html">» B2B Data</a></li>
+          <li><a href="/pages/key-design-data.html">» Key Decision Makers Data</a></li>
+          <li><a href="/pages/email-marketing.html">» Email Marketing Programs</a></li>
+          <li><a href="/pages/tech-data.html">» Technology Data</a></li>
+          <li><a href="/pages/healthcare.html">» Healthcare Data</a></li>
+          <li><a href="/pages/post-pre-event-data.html">» Post Event / Pre Event Database</a></li>
+        </div>
+
+        <div class="">
+          <li><a href="/pages/industry.html">» Industry Data</a></li>
+          <li><a href="/pages/data-append.html">» Data Append</a></li>
+          <li><a href="/pages/email-append.html">» Email Append</a></li>
+        </div>
         </ul>
       </div>
 
+<div class="col-md-3 footer-logo text-center">
+  <div class="logo-1 mb-3">
+    <img src="../images/100.png" alt="100%" class="img-fluid" style="height:60px; width:auto; margin:5px;">
+    <img src="../images/95-Accuracy.png" alt="95%" class="img-fluid" style="height:60px; width:auto; margin:5px;">
+    <img src="../images/bbb+.webp" alt="BBB" class="img-fluid" style="height:60px; width:auto; margin:5px;">
+  </div>  
+
+  <div class="logo-2">
+    <img src="../images/GDPR.png" alt="GDPR" class="img-fluid" style="height:50px; width:auto; margin:5px;">
+    <img src="../images/secure-1.png" alt="Secure" class="img-fluid" style="height:80px; width:auto; margin:5px;"> 
+    <img src="../images/can-span.png" alt="CAN-SPAM" class="img-fluid" style="height:60px; width:50px; margin:5px;">
+  </div>
+</div>
+
+
       <!-- Contact Info -->
-      <div class="col-md-4 mb-4">
+      <div class="col-md-3 mb-4">
         <h5 class="fw-bold mb-3">CONTACT INFO</h5>
         <div class="mb-2" style="height:2px; width:40px; background:#2ecc71;"></div>
         <p><strong>Address:</strong> 3524 SILVERSIDE ROAD SUITE 35B<br>WILMINGTON, DELAWARE 19810-4929</p>
@@ -58,8 +122,8 @@
   <!-- Bottom Bar -->
   <div class="text-center py-3 mt-3 border-top" style="border-color: rgba(255,255,255,0.2) !important;">
     <div class="container d-flex flex-column flex-md-row justify-content-between">
-      <p class="mb-0">© 2022 ALL RIGHTS RESERVED.</p>
-      <p class="mb-0"><a href="#" class="text-white text-decoration-none">TERMS AND CONDITIONS</a> | <a href="#" class="text-white text-decoration-none">PRIVACY POLICY</a></p>
+      <p class="mb-0">© 2022 All Rights Reserved.</p>
+      <p class="mb-0"><a href="#" class="text-white text-decoration-none">Terms and Conditions</a> | <a href="#" class="text-white text-decoration-none">Privacy Policy</a></p>
     </div>
   </div>
 </footer>

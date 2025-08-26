@@ -85,7 +85,7 @@ body {
   );
   pointer-events: none;
 }
-
+ 
 .topbar-container {
   max-width: 1200px;
   margin: 0 auto;
@@ -97,6 +97,7 @@ body {
 
 .logo img {
   height: 80px;
+
   filter: drop-shadow(0 4px 8px var(--shadow-light));
   transition: transform 0.3s ease;
 }

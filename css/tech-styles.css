@@ -1,0 +1,142 @@
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #f8f9fa;
+  color: #333;
+}
+
+.hero-section {
+  background-image: url("https://datasnapsolutionsinc.com/assets/images/services/factory-consultent.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 80vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+}
+
+.hero-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-content h1 {
+  font-size: 4rem;
+  font-weight: bold;
+}
+
+.data-section {
+  padding: 60px 0;
+}
+
+.card-btn {
+  margin: 5px;
+  background-color: #f8f9fa;
+  border: 1px solid #ddd;
+  padding: 10px 15px;
+  display: inline-block;
+  border-radius: 5px;
+}
+
+.card-btn:hover {
+  background-color: #e2e6ea;
+}
+
+.data-table {
+  margin-top: 30px;
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.data-table h5 {
+  font-weight: 600;
+}
+
+.button-boxes {
+  max-width: 90%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+  margin: 0 auto;
+}
+
+.button-boxes .btn {
+  width: 40%;
+  color: #0044ff;
+  padding: 0.7em 1em;
+  outline: none;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 0.5em;
+  background: #f4f8ff;
+  cursor: pointer;
+  border: 1px solid #f4f8ff;
+  transition: all 0.3s;
+  box-shadow: 3px 3px 9px #c5c5c5, -3px -3px 9px #f6faff;
+  margin-bottom: 2rem;
+}
+
+.button-boxes .btn:hover {
+  color: #0044ff;
+  transform: translateY(-6px);
+}
+
+.button-boxes .btn:active {
+  color: #0044ff;
+  box-shadow: inset 4px 4px 12px #c5c5c5, inset -4px -4px 12px #81a5e4;
+  border: none;
+}
+
+.usa-tech-section {
+  width: 100%;
+}
+
+.usa-tech-section h5 {
+  font-size: 1.5rem;
+  color: #001bb7;
+}
+
+.usa-tech-section .bg-light {
+  background-color: #f4f8ff !important;
+  border: 1px solid #e0e0e0;
+}
+
+.usa-tech-section h4 {
+  color: #001bb7;
+}
+
+.usa-tech-section hr {
+  border-top: 1px solid #ccc;
+  margin: 1rem 0;
+}
+
+.main-div {
+  display: flex;
+  flex-direction: column;
+}
+
+.main-div h3 {
+    color: #0044ff;
+    margin-bottom: 2rem !important;
+}
+.main-content {
+    display: flex;
+    gap: 2rem;
+}
+
+.top-text {
+    max-width: 50%;
+    text-align: justify;
+}

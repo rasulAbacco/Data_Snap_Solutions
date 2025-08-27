@@ -104,7 +104,42 @@
             </div>
         </div>
 
-        <div class="result-box">
+
+
+    </div>
+    <!-- Data Records Counter Section -->
+    <section class="data-stats">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Total Data Records</h2>
+            </div>
+            <div class="stats-grid">
+                <div class="stat-item animate-on-scroll">
+                    <div class="stat-number" id="counter1">0</div>
+                    <div class="stat-label">B2B Contact Lists</div>
+                </div>
+                <div class="stat-item animate-on-scroll">
+                    <div class="stat-number" id="counter2">0</div>
+                    <div class="stat-label">Technology Data</div>
+                </div>
+                <div class="stat-item animate-on-scroll">
+                    <div class="stat-number" id="counter3">0</div>
+                    <div class="stat-label">Industry Data</div>
+                </div>
+                <div class="stat-item animate-on-scroll">
+                    <div class="stat-number" id="counter4">0</div>
+                    <div class="stat-label">Professionals Data</div>
+                </div>
+                <div class="stat-item animate-on-scroll">
+                    <div class="stat-number" id="counter5">0</div>
+                    <div class="stat-label">Healthcare Data</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="result-box w-75 mb-5">
             <i class="fas fa-trophy"></i>
             <p class="result-text">
                 Result: A trusted, up-to-date database that helps you achieve higher response rates, stronger ROI, and
@@ -112,6 +147,9 @@
             </p>
         </div>
     </div>
+
+
+
 
     <!-- Footer Placeholder -->
     <!-- Footer -->
@@ -131,6 +169,73 @@
             .then(data => {
                 document.getElementById('footer').innerHTML = data;
             });
+    </script>
+
+    <script>
+        // Counter Animation Function
+        function animateCounter(id, target, suffix = '') {
+            const element = document.getElementById(id);
+            const duration = 2000;
+            const steps = 60;
+            const increment = target / steps;
+            let current = 0;
+
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    current = target;
+                    clearInterval(timer);
+                }
+
+                if (target >= 1000000) {
+                    element.textContent = (current / 1000000).toFixed(0) + 'M+' + suffix;
+                } else if (target >= 1000) {
+                    element.textContent = (current / 1000).toFixed(0) + 'K+' + suffix;
+                } else {
+                    element.textContent = Math.floor(current) + suffix;
+                }
+            }, duration / steps);
+        }
+
+        // Scroll Animation Observer
+        const observerOptions = {
+            threshold: 0.3,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+
+                    // Trigger counter animations when stats section is visible
+                    if (entry.target.querySelector('#counter1') && !entry.target.hasAttribute('data-animated')) {
+                        entry.target.setAttribute('data-animated', 'true');
+                        setTimeout(() => {
+                            animateCounter('counter1', 500000000); // 500M+
+                            animateCounter('counter2', 106000000); // 106M+
+                            animateCounter('counter3', 45000000);  // 45M+
+                            animateCounter('counter4', 75000000);  // 75M+
+                            animateCounter('counter5', 15000000);  // 15M+
+                        }, 300);
+                    }
+                }
+            });
+        }, observerOptions);
+
+        // Initialize observer when DOM is loaded
+        document.addEventListener('DOMContentLoaded', function () {
+            // Observe the stats section
+            const statsSection = document.querySelector('.data-stats');
+            if (statsSection) {
+                observer.observe(statsSection);
+            }
+
+            // Observe all animated elements
+            document.querySelectorAll('.animate-on-scroll').forEach(el => {
+                observer.observe(el);
+            });
+        });
     </script>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>

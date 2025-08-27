@@ -1,0 +1,360 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+body {
+  font-family: "Poppins", sans-serif !important;
+}
+
+/* ===============================
+       MODERN CAROUSEL STYLES (SCOPED)
+       =============================== */
+
+
+/* Carousel container */
+#carouselExampleFade {
+  border-radius: 0;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* Base carousel item styles */
+#carouselExampleFade .carousel-item {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Carousel images - base styles */
+#carouselExampleFade .carousel-item img {
+  width: 100%;
+  height: 600px;
+  object-fit: cover;
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  filter: brightness(0.9) contrast(1.1);
+}
+
+/* Modern overlay for better text readability */
+#carouselExampleFade .carousel-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.3) 0%,
+    rgba(0, 0, 0, 0.1) 50%,
+    rgba(0, 0, 0, 0.2) 100%
+  );
+  z-index: 2;
+  transition: opacity 0.4s ease;
+}
+
+/* Hover effect on carousel container */
+#carouselExampleFade:hover .carousel-item::before {
+  opacity: 0.8;
+}
+
+/* ===============================
+       INDIVIDUAL SLIDE HOVER EFFECTS
+       =============================== */
+
+/* Slide 1 - Zoom & Brightness */
+#carouselExampleFade .carousel-item:nth-child(1):hover img {
+  transform: scale(1.08);
+  filter: brightness(1.1) contrast(1.15) saturate(1.1);
+}
+
+/* Slide 2 - Subtle Tilt & Scale */
+#carouselExampleFade .carousel-item:nth-child(2):hover img {
+  transform: rotate(1deg) scale(1.05);
+  filter: brightness(1.05) contrast(1.1) hue-rotate(5deg);
+}
+
+/* Slide 3 - Scale with Blur Focus */
+#carouselExampleFade .carousel-item:nth-child(3):hover img {
+  transform: scale(1.06);
+  filter: brightness(1.2) contrast(1.2) blur(0.5px);
+}
+
+/* Slide 4 - Dramatic Scale */
+#carouselExampleFade .carousel-item:nth-child(4):hover img {
+  transform: scale(1.12);
+  filter: brightness(1.15) contrast(1.25) saturate(1.2);
+}
+
+/* Slide 5 - Rotate & Scale */
+#carouselExampleFade .carousel-item:nth-child(5):hover img {
+  transform: rotate(-1deg) scale(1.07);
+  filter: brightness(1.1) contrast(1.15) sepia(0.1);
+}
+
+/* ===============================
+       MODERN SHINE EFFECT (SLIDE 3)
+       =============================== */
+#carouselExampleFade .carousel-item:nth-child(3)::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 30%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+  transform: skewX(-20deg);
+  z-index: 3;
+  transition: left 0.8s ease;
+  pointer-events: none;
+}
+
+#carouselExampleFade .carousel-item:nth-child(3):hover::after {
+  left: 100%;
+}
+
+/* ===============================
+       PARTICLE EFFECTS (SCOPED)
+       =============================== */
+#carouselExampleFade .network-effect {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 4;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+#carouselExampleFade .carousel-item:hover .network-effect {
+  opacity: 1;
+}
+
+/* ===============================
+       MODERN CAROUSEL CONTROLS
+       =============================== */
+#carouselExampleFade .carousel-control-prev,
+#carouselExampleFade .carousel-control-next {
+  width: 60px;
+  height: 60px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+  opacity: 0;
+  z-index: 10;
+}
+
+#carouselExampleFade .carousel-control-prev {
+  left: 20px;
+}
+
+#carouselExampleFade .carousel-control-next {
+  right: 20px;
+}
+
+#carouselExampleFade:hover .carousel-control-prev,
+#carouselExampleFade:hover .carousel-control-next {
+  opacity: 1;
+}
+
+#carouselExampleFade .carousel-control-prev:hover,
+#carouselExampleFade .carousel-control-next:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+#carouselExampleFade .carousel-control-prev-icon,
+#carouselExampleFade .carousel-control-next-icon {
+  width: 20px;
+  height: 20px;
+  filter: invert(1);
+}
+
+/* ===============================
+       MODERN CAROUSEL INDICATORS
+       =============================== */
+#carouselExampleFade .carousel-indicators {
+  bottom: 20px;
+  margin: 0;
+}
+
+#carouselExampleFade .carousel-indicators button {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  background: transparent;
+  margin: 0 8px;
+  transition: all 0.3s ease;
+  opacity: 0.7;
+}
+
+#carouselExampleFade .carousel-indicators button.active {
+  background: rgba(255, 255, 255, 0.9);
+  transform: scale(1.2);
+  opacity: 1;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+}
+
+#carouselExampleFade .carousel-indicators button:hover {
+  background: rgba(255, 255, 255, 0.7);
+  transform: scale(1.1);
+}
+
+/* ===============================
+       RESPONSIVE ADJUSTMENTS
+       =============================== */
+@media (max-width: 768px) {
+  #carouselExampleFade .carousel-item img {
+    height: 400px;
+  }
+
+  #carouselExampleFade .carousel-control-prev,
+  #carouselExampleFade .carousel-control-next {
+    width: 45px;
+    height: 45px;
+  }
+
+  #carouselExampleFade .carousel-control-prev {
+    left: 10px;
+  }
+
+  #carouselExampleFade .carousel-control-next {
+    right: 10px;
+  }
+}
+
+/* ===============================
+       SMOOTH TRANSITIONS FOR SLIDES
+       =============================== */
+#carouselExampleFade .carousel-item.active {
+  animation: slideInSmooth 0.8s ease-out;
+}
+
+@keyframes slideInSmooth {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Prevent hover effects from affecting other page elements */
+.carousel-item,
+.carousel-item img,
+.carousel-item::before,
+.carousel-item::after,
+.network-effect {
+  /* Ensure these styles only apply within carousel */
+}
+
+.case-studies-wrapper {
+  overflow: hidden;
+  position: relative;
+}
+
+.case-studies-track {
+  display: flex;
+  gap: 20px;
+  animation: scrollLeft 20s linear infinite;
+  margin: 2rem;
+}
+
+.card-icon {
+  color: #01024f !important;
+}
+
+.case-card {
+  width: 350px;
+  flex-shrink: 0;
+  text-align: center;
+  border-radius: 10px;
+  transition: transform 0.5s ease, box-shadow 0.3s ease;
+}
+
+.case-card:hover {
+  transform: scale(1.2);
+  box-shadow: 0 8px 20px #0044ff;
+  z-index: 10;
+}
+
+.case-card h5 {
+  margin: 10px 0;
+  text-align: center;
+  color: #01024f;
+}
+
+.case-card p {
+  text-align: justify;
+  font-size: 0.8rem;
+  font-weight: 500;
+  line-height: 1.4rem;
+}
+
+.case-studies-wrapper:hover .case-studies-track {
+  animation-play-state: paused;
+}
+
+@keyframes scrollLeft {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.company-logo {
+  display: flex;
+  flex-wrap: nowrap;            /* allow logos to wrap to new lines */
+  justify-content: center;    /* center align logos */
+  align-items: center;
+  gap: 1rem;                  /* more spacing between logos */
+  margin-top: 1rem;
+  padding: 0.5rem;
+}
+
+.company-logo img {
+  max-height:1.2rem;           /* consistent size */         /* prevent oversized logos */
+  object-fit: contain;   
+  transition: all 0.3s ease;  /* smooth hover effect */
+}
+
+.company-logo img:hover {     /* bring color back on hover */
+  opacity: 1;
+  transform: scale(1.1);      /* pop effect */
+}
+
+.logo2{
+  display: flex;
+  flex-wrap: nowrap;            /* allow logos to wrap to new lines */
+  justify-content: center;    /* center align logos */
+  align-items: center;
+  gap: 1rem;                  /* more spacing between logos */
+  margin-top: 1rem;
+  padding: 0.5rem;
+}
+.logo2 img {
+    height:2.5rem;                  /* prevent oversized logos */
+  object-fit: contain;   
+  transition: all 0.3s ease;  
+  border-radius: 5px;
+}
+
+.logo2 img:hover {     /* bring color back on hover */
+  opacity: 1;
+  transform: scale(1.1);      /* pop effect */
+}

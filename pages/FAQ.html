@@ -1,0 +1,433 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Data Snap Solutions - FAQ</title>
+    <link rel="icon" type="image/x-icon" href="/images/logo-icon.png">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .faq-header {
+            background: linear-gradient(135deg, #031f9d 0%, #6b0dca 100%);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .faq-section {
+            padding: 60px 0;
+        }
+
+        .faq-item {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .faq-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+        }
+
+        .faq-question {
+            padding: 25px 30px;
+            cursor: pointer;
+            border: none;
+            background: none;
+            width: 100%;
+            text-align: left;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: #333;
+        }
+
+        .faq-question:hover {
+            color: #00198a;
+        }
+
+        .faq-icon {
+            color: #000933;
+            margin-right: 15px;
+            font-size: 1.2rem;
+        }
+
+        .faq-toggle {
+            color: #667eea;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-toggle.active {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            padding: 0 30px 25px 30px;
+            color: #666;
+            display: none;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .faq-answer.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .category-title {
+            color: #0022bb;
+            font-weight: 700;
+            margin: 40px 0 20px 0;
+            font-size: 1.4rem;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #667eea15, #764ba215);
+            border-left: 4px solid #667eea;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="navbar"></div>
+
+    <!-- FAQ Header -->
+    <section class="faq-header">
+        <div class="container">
+            <h1 class="display-4 fw-bold mb-3">Frequently Asked Questions</h1>
+            <p class="lead mb-0">Get answers to common questions about our data services</p>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+
+                    <!-- Data Quality & Accuracy -->
+                    <h3 class="category-title"><i class="fas fa-check-circle me-2"></i>Data Quality & Accuracy</h3>
+
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFAQ(this)">
+                            <span><i class="fas fa-chart-line faq-icon"></i>How accurate is the data?</span>
+                            <i class="fas fa-chevron-down faq-toggle"></i>
+                        </button>
+                        <div class="faq-answer">
+                            Our data is verified through multiple sources and regularly updated. We ensure up to
+                            <strong>95% accuracy</strong>, with strict quality checks to maintain reliability. Our data
+                            undergoes continuous validation processes to ensure you receive the most current and precise
+                            information available.
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFAQ(this)">
+                            <span><i class="fas fa-sync-alt faq-icon"></i>How often is the data updated?</span>
+                            <i class="fas fa-chevron-down faq-toggle"></i>
+                        </button>
+                        <div class="faq-answer">
+                            We update our database <strong>monthly</strong> with fresh data from verified sources.
+                            Critical business information and contact details are refreshed more frequently to ensure
+                            maximum accuracy and relevance for your campaigns.
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFAQ(this)">
+                            <span><i class="fas fa-shield-alt faq-icon"></i>What sources do you use for data
+                                collection?</span>
+                            <i class="fas fa-chevron-down faq-toggle"></i>
+                        </button>
+                        <div class="faq-answer">
+                            We collect data from <strong>legitimate public sources</strong>, business directories,
+                            opt-in databases, and verified industry publications. All sources comply with data privacy
+                            regulations and ethical collection practices.
+                        </div>
+                    </div>
+
+                    <!-- Samples & Testing -->
+                    <h3 class="category-title"><i class="fas fa-eye me-2"></i>Samples & Testing</h3>
+
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFAQ(this)">
+                            <span><i class="fas fa-sample faq-icon"></i>Can I get a sample?</span>
+                            <i class="fas fa-chevron-down faq-toggle"></i>
+                        </button>
+                        <div class="faq-answer">
+                            Yes, absolutely. We offer a <strong>free sample</strong> so you can review the data quality,
+                            format, and relevance before making a purchase decision. Sample requests are processed
+                            within <strong>24 hours</strong>.
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFAQ(this)">
+                            <span><i class="fas fa-list-ul faq-icon"></i>How many records are included in a
+                                sample?</span>
+                            <i class="fas fa-chevron-down faq-toggle"></i>
+                        </button>
+                        <div class="faq-answer">
+                            Our standard sample includes <strong>50-100 records</strong> that match your specific
+                            criteria. This gives you a comprehensive view of data quality, format, and the types of
+                            contacts available for your target market.
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFAQ(this)">
+                            <span><i class="fas fa-filter faq-icon"></i>Can I request samples for specific industries or
+                                locations?</span>
+                            <i class="fas fa-chevron-down faq-toggle"></i>
+                        </button>
+                        <div class="faq-answer">
+                            Yes, we can provide <strong>targeted samples</strong> based on your specific requirements
+                            including industry, location, company size, job titles, and other demographic criteria to
+                            ensure the sample reflects your exact needs.
+                        </div>
+                    </div>
+
+                    <!-- Delivery & Turnaround -->
+                    <h3 class="category-title"><i class="fas fa-clock me-2"></i>Delivery & Turnaround</h3>
+
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFAQ(this)">
+                            <span><i class="fas fa-shipping-fast faq-icon"></i>How quickly do I get the list?</span>
+                            <i class="fas fa-chevron-down faq-toggle"></i>
+                        </button>
+                        <div class="faq-answer">
+                            Turnaround time is fast—typically <strong>within 24 to 72 hours</strong>, depending on the
+                            complexity and size of your request. Standard lists are often delivered within 24 hours,
+                            while custom requirements may take up to 72 hours.
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFAQ(this)">
+                            <span><i class="fas fa-file-alt faq-icon"></i>In what format will I receive the data?</span>
+                            <i class="fas fa-chevron-down faq-toggle"></i>
+                        </button>
+                        <div class="faq-answer">
+                            Data is delivered in your preferred format including <strong>Excel, CSV, or text
+                                files</strong>. We can also accommodate custom formats based on your CRM or marketing
+                            automation platform requirements.
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFAQ(this)">
+                            <span><i class="fas fa-bolt faq-icon"></i>Do you offer rush delivery for urgent
+                                projects?</span>
+                            <i class="fas fa-chevron-down faq-toggle"></i>
+                        </button>
+                        <div class="faq-answer">
+                            Yes, we offer <strong>rush delivery services</strong> for urgent projects. Same-day delivery
+                            is available for standard lists, and priority processing can be arranged for custom
+                            requirements at a small additional fee.
+                        </div>
+                    </div>
+
+                    <!-- Quality Guarantee -->
+                    <h3 class="category-title"><i class="fas fa-handshake me-2"></i>Quality Guarantee</h3>
+
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFAQ(this)">
+                            <span><i class="fas fa-exclamation-triangle faq-icon"></i>What if I get bounces?</span>
+                            <i class="fas fa-chevron-down faq-toggle"></i>
+                        </button>
+                        <div class="faq-answer">
+                            We offer a <strong>bounce-back guarantee</strong>. Any invalid or bounced contacts will be
+                            <strong>replaced at no extra cost</strong> within a specified time frame. We stand behind
+                            our data quality with a comprehensive replacement policy.
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFAQ(this)">
+                            <span><i class="fas fa-percentage faq-icon"></i>What bounce rate should I expect?</span>
+                            <i class="fas fa-chevron-down faq-toggle"></i>
+                        </button>
+                        <div class="faq-answer">
+                            Our typical bounce rate is <strong>less than 5%</strong> for email addresses and under
+                            <strong>3%</strong> for phone numbers. This industry-leading accuracy rate is maintained
+                            through our rigorous verification processes.
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFAQ(this)">
+                            <span><i class="fas fa-undo faq-icon"></i>What is your refund policy?</span>
+                            <i class="fas fa-chevron-down faq-toggle"></i>
+                        </button>
+                        <div class="faq-answer">
+                            All payments must be made in the agreed currency before delivery. Due to the nature of
+                            digital data, <strong>all sales are final</strong> and non-refundable once delivered.
+                            Refunds
+                            are only applicable in cases of proven non-delivery.
+                        </div>
+                    </div>
+
+                    <!-- Compliance & Legal -->
+                    <h3 class="category-title"><i class="fas fa-balance-scale me-2"></i>Compliance & Legal</h3>
+
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFAQ(this)">
+                            <span><i class="fas fa-user-shield faq-icon"></i>Is this GDPR compliant?</span>
+                            <i class="fas fa-chevron-down faq-toggle"></i>
+                        </button>
+                        <div class="faq-answer">
+                            Yes. All data is sourced ethically and in accordance with <strong>GDPR and other data
+                                privacy regulations</strong>, ensuring full compliance and peace of mind. We maintain
+                            strict data governance protocols and regular compliance audits.
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFAQ(this)">
+                            <span><i class="fas fa-flag-usa faq-icon"></i>Do you comply with CAN-SPAM and other
+                                regulations?</span>
+                            <i class="fas fa-chevron-down faq-toggle"></i>
+                        </button>
+                        <div class="faq-answer">
+                            Absolutely. We ensure compliance with <strong>CAN-SPAM, CCPA, CASL</strong>, and other
+                            regional data protection laws. Our data collection and processing methods meet international
+                            standards for privacy and consent.
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFAQ(this)">
+                            <span><i class="fas fa-file-contract faq-icon"></i>Do you provide compliance
+                                documentation?</span>
+                            <i class="fas fa-chevron-down faq-toggle"></i>
+                        </button>
+                        <div class="faq-answer">
+                            Yes, we provide <strong>compliance certificates and documentation</strong> upon request.
+                            This includes data source verification, consent documentation, and compliance statements
+                            that you can use for your internal audit requirements.
+                        </div>
+                    </div>
+
+                    <!-- Pricing & Plans -->
+                    <h3 class="category-title"><i class="fas fa-dollar-sign me-2"></i>Pricing & Plans</h3>
+
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFAQ(this)">
+                            <span><i class="fas fa-calculator faq-icon"></i>How is pricing determined?</span>
+                            <i class="fas fa-chevron-down faq-toggle"></i>
+                        </button>
+                        <div class="faq-answer">
+                            Pricing is based on <strong>data complexity, volume, and customization
+                                requirements</strong>. We offer competitive rates with volume discounts and flexible
+                            pricing models to accommodate different budget requirements.
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFAQ(this)">
+                            <span><i class="fas fa-tags faq-icon"></i>Do you offer volume discounts?</span>
+                            <i class="fas fa-chevron-down faq-toggle"></i>
+                        </button>
+                        <div class="faq-answer">
+                            Yes, we offer <strong>significant volume discounts</strong> for large orders and enterprise
+                            clients. Bulk pricing starts at 10,000+ records with additional discounts available for
+                            annual contracts and repeat customers.
+                        </div>
+                    </div>
+
+                    <!-- Still Have Questions? -->
+                    <div class="highlight-box text-center mt-5">
+                        <h4><i class="fas fa-question-circle me-2"></i>Still Have Questions?</h4>
+                        <p class="mb-3">Can't find what you're looking for? Our expert team is here to help you with any
+                            questions about our data services.</p>
+                        <a href="/pages/contact-us.html" class="btn btn-primary btn-lg">
+                            <i class="fas fa-envelope me-2"></i>Contact Us Today
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="footer"></div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- FAQ Toggle Script -->
+    <script>
+        function toggleFAQ(element) {
+            const answer = element.nextElementSibling;
+            const icon = element.querySelector('.faq-toggle');
+
+            // Close all other open FAQs
+            const allAnswers = document.querySelectorAll('.faq-answer');
+            const allIcons = document.querySelectorAll('.faq-toggle');
+
+            allAnswers.forEach((item, index) => {
+                if (item !== answer) {
+                    item.classList.remove('active');
+                    allIcons[index].classList.remove('active');
+                }
+            });
+
+            // Toggle current FAQ
+            answer.classList.toggle('active');
+            icon.classList.toggle('active');
+        }
+
+        // Dynamic Navbar/Footer
+        fetch('/pages/navbar.html')
+            .then(res => res.text())
+            .then(data => {
+                document.getElementById('navbar').innerHTML = data;
+            })
+            .catch(err => console.log('Navbar not found'));
+
+        fetch('/pages/footer.html')
+            .then(res => res.text())
+            .then(data => {
+                document.getElementById('footer').innerHTML = data;
+            })
+            .catch(err => console.log('Footer not found'));
+    </script>
+
+</body>
+
+</html>

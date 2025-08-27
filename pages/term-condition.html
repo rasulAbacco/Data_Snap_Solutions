@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Terms & Conditions - Data Snap Solutions</title>
+    <link rel="icon" type="image/x-icon" href="/images/logo-icon.png">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            --accent-color: #6366f1;
+            --text-primary: #1f2937;
+            --text-secondary: #6b7280;
+            --surface-light: #f9fafb;
+            --border-light: #e5e7eb;
+            --shadow-soft: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-medium: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --border-radius: 16px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.7;
+            color: var(--text-primary);
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background: var(--primary-gradient);
+            color: white;
+            padding: 80px 0 60px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #fff, #e0e7ff);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            opacity: 0.9;
+            font-weight: 400;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Main Content */
+        .terms-container {
+            max-width: 1100px;
+            margin: -40px auto 0;
+            position: relative;
+            z-index: 3;
+            padding: 0 20px;
+        }
+
+        .terms-card {
+            background: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-medium);
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .terms-content {
+            padding: 60px;
+        }
+
+        .intro-text {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin-bottom: 40px;
+            padding: 25px;
+            background: var(--surface-light);
+            border-radius: 12px;
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            margin: 40px 0 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--surface-light);
+        }
+
+        .section-number {
+            background: var(--accent-color);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            margin-right: 15px;
+            box-shadow: var(--shadow-soft);
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin: 0;
+        }
+
+        .section-content {
+            margin-left: 55px;
+        }
+
+        .terms-list {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
+        }
+
+        .terms-list li {
+            position: relative;
+            padding: 12px 0 12px 35px;
+            margin-bottom: 8px;
+            color: var(--text-secondary);
+            transition: all 0.3s ease;
+        }
+
+        .terms-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            top: 12px;
+            width: 20px;
+            height: 20px;
+            background: linear-gradient(45deg, #10b981, #34d399);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .terms-list li:hover {
+            color: var(--text-primary);
+            transform: translateX(5px);
+        }
+
+        /* Special sections styling */
+        .highlight-section {
+            background: linear-gradient(135deg, #fef3c7, #fde68a);
+            border: 1px solid #f59e0b;
+            border-radius: 12px;
+            padding: 25px;
+            margin: 30px 0;
+        }
+
+        .warning-section {
+            background: linear-gradient(135deg, #fee2e2, #fecaca);
+            border: 1px solid #ef4444;
+            border-radius: 12px;
+            padding: 25px;
+            margin: 30px 0;
+        }
+
+        /* Floating action button */
+        .floating-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: var(--primary-gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            box-shadow: var(--shadow-medium);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .floating-btn:hover {
+            transform: scale(1.1) rotate(10deg);
+            color: white;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+
+            .terms-content {
+                padding: 30px;
+            }
+
+            .section-content {
+                margin-left: 0;
+            }
+
+            .section-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .section-number {
+                margin-bottom: 10px;
+                margin-right: 0;
+            }
+        }
+
+        /* Smooth scroll behavior */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Loading animation */
+        .fade-in {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Print styles */
+        @media print {
+
+            .floating-btn,
+            .hero-section::before {
+                display: none;
+            }
+
+            body {
+                background: white;
+            }
+
+            .terms-card {
+                box-shadow: none;
+                border: 1px solid #ccc;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="navbar"></div>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="hero-content text-center">
+                <h1 class="hero-title fade-in">Terms & Conditions</h1>
+                <p class="hero-subtitle fade-in">Understanding our service agreement and your rights</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="terms-container">
+        <div class="terms-card fade-in">
+            <div class="terms-content">
+                <div class="intro-text">
+                    <i class="fas fa-info-circle me-2" style="color: var(--accent-color);"></i>
+                    Welcome to Datasnap Solution ("Company," "we," "our," "us"). By accessing or using our website,
+                    products, or services, you agree to comply with and be bound by the following Terms and Conditions.
+                </div>
+
+                <!-- Section 1 -->
+                <div class="section-header">
+                    <div class="section-number">1</div>
+                    <h3 class="section-title">Use of Services</h3>
+                </div>
+                <div class="section-content">
+                    <ul class="terms-list">
+                        <li>You agree to use our services only for lawful purposes and in accordance with applicable
+                            laws and regulations.</li>
+                        <li>Unauthorized use of our website, including scraping, data mining, or spamming, is strictly
+                            prohibited and may result in account termination.</li>
+                        <li>You are responsible for maintaining the confidentiality of your account credentials and for
+                            all activities under your account.</li>
+                    </ul>
+                </div>
+
+                <!-- Section 2 -->
+                <div class="section-header">
+                    <div class="section-number">2</div>
+                    <h3 class="section-title">Services & Deliverables</h3>
+                </div>
+                <div class="section-content">
+                    <ul class="terms-list">
+                        <li>Datasnap Solution provides B2B data solutions, lead lists, and comprehensive marketing
+                            services to business clients.</li>
+                        <li>All deliverables are provided electronically via secure channels including email, Google
+                            Drive, or encrypted download links.</li>
+                        <li>We do not guarantee conversion rates, sales outcomes, or response rates from the data and
+                            services provided.</li>
+                    </ul>
+                </div>
+
+                <!-- Section 3 -->
+                <div class="section-header">
+                    <div class="section-number">3</div>
+                    <h3 class="section-title">Payments & Refunds</h3>
+                </div>
+                <div class="section-content highlight-section">
+                    <ul class="terms-list">
+                        <li>All payments must be completed in the agreed currency before service delivery begins.</li>
+                        <li>Due to the digital nature of our data products, all sales are final and non-refundable once
+                            delivered to the client.</li>
+                        <li>Refunds are only applicable in cases of proven non-delivery or significant service failures
+                            as determined by our support team.</li>
+                    </ul>
+                </div>
+
+                <!-- Section 4 -->
+                <div class="section-header">
+                    <div class="section-number">4</div>
+                    <h3 class="section-title">Intellectual Property</h3>
+                </div>
+                <div class="section-content">
+                    <ul class="terms-list">
+                        <li>All content, proprietary databases, and software on this website are the exclusive property
+                            of Datasnap Solution or its licensors.</li>
+                        <li>You may not reproduce, distribute, resell, or redistribute our data without prior written
+                            consent from our legal department.</li>
+                        <li>Violation of intellectual property rights may result in legal action and damages.</li>
+                    </ul>
+                </div>
+
+                <!-- Section 5 -->
+                <div class="section-header">
+                    <div class="section-number">5</div>
+                    <h3 class="section-title">Limitation of Liability</h3>
+                </div>
+                <div class="section-content warning-section">
+                    <ul class="terms-list">
+                        <li>We strive to provide accurate and up-to-date information. However, we do not warrant 100%
+                            accuracy, completeness, or timeliness of all data.</li>
+                        <li>Datasnap Solution shall not be liable for any direct, indirect, incidental, special, or
+                            consequential damages arising from the use of our services.</li>
+                        <li>Our maximum liability shall not exceed the amount paid for the specific service in question.
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Section 6 -->
+                <div class="section-header">
+                    <div class="section-number">6</div>
+                    <h3 class="section-title">Governing Law & Jurisdiction</h3>
+                </div>
+                <div class="section-content">
+                    <ul class="terms-list">
+                        <li>These Terms shall be governed by and construed in accordance with the laws of [Jurisdiction:
+                            e.g., Delaware, USA].</li>
+                        <li>Any disputes arising from these terms will be resolved through binding arbitration in the
+                            specified jurisdiction.</li>
+                        <li>If any provision of these terms is found to be unenforceable, the remaining provisions shall
+                            continue in full effect.</li>
+                    </ul>
+                </div>
+
+                <div class="mt-5 p-4 text-center" style="background: var(--surface-light); border-radius: 12px;">
+                    
+                    <p class="mb-0 text-muted">For questions about these terms, please contact our legal team at
+                        support@datasnapsolution.com</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating Back to Top Button -->
+    <a href="#" class="floating-btn" title="Back to Top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <div id="footer"></div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Load Navbar dynamically
+        fetch('/pages/navbar.html')
+            .then(res => res.text())
+            .then(data => {
+                document.getElementById('navbar').innerHTML = data;
+            })
+            .catch(err => console.log('Navbar loading failed:', err));
+
+        // Load Footer dynamically
+        fetch('/pages/footer.html')
+            .then(res => res.text())
+            .then(data => {
+                document.getElementById('footer').innerHTML = data;
+            })
+            .catch(err => console.log('Footer loading failed:', err));
+
+        // Set current date
+        document.getElementById('lastUpdated').textContent = new Date().toLocaleDateString('en-US', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+        });
+
+        // Smooth scroll for floating button
+        document.querySelector('.floating-btn').addEventListener('click', function (e) {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Add fade-in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function (entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.querySelectorAll('.section-header, .section-content').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Add smooth hover effects
+        document.querySelectorAll('.terms-list li').forEach(item => {
+            item.addEventListener('mouseenter', function () {
+                this.style.transform = 'translateX(5px)';
+            });
+
+            item.addEventListener('mouseleave', function () {
+                this.style.transform = 'translateX(0)';
+            });
+        });
+
+        // Print functionality
+        function printTerms() {
+            window.print();
+        }
+
+        // Add keyboard shortcuts
+        document.addEventListener('keydown', function (e) {
+            // Ctrl/Cmd + P to print
+            if ((e.ctrlKey || e.metaKey) && e.key === 'p') {
+                e.preventDefault();
+                printTerms();
+            }
+
+            // ESC to go back to top
+            if (e.key === 'Escape') {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        });
+    </script>
+</body>
+
+</html>

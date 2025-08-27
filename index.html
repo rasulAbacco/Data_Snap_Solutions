@@ -1,485 +1,230 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data Snap Solutions</title>
-    <link rel="icon" type="image/x-icon" href="/images/logo-icon.png">
-    <!-- Bootstrap 5 CSS -->
-        <!-- Font Awesome -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data Snap Solutions</title>
+  <link rel="icon" type="image/x-icon" href="/images/logo-icon.png">
+  <!-- Bootstrap 5 CSS -->
+  <!-- Font Awesome -->
+  <link href="./images/home-img.png" rel="stylesheet">
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <link rel="stylesheet" href="/css/home.css">
- 
- 
-<style>
-    /* ===============================
-       MODERN CAROUSEL STYLES (SCOPED)
-       =============================== */
-    
-    /* Carousel container */
-    #carouselExampleFade {
-        border-radius: 0;
-        overflow: hidden;
-        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-    }
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
-    /* Base carousel item styles */
-    #carouselExampleFade .carousel-item {
-        position: relative;
-        overflow: hidden;
-    }
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-    /* Carousel images - base styles */
-    #carouselExampleFade .carousel-item img {
-        width: 100%;
-        height: 600px;
-        object-fit: cover;
-        transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-        filter: brightness(0.9) contrast(1.1);
-    }
+  <link rel="stylesheet" href="/css/home.css">
+  <link rel="stylesheet" href="css/index.css">
 
-    /* Modern overlay for better text readability */
-    #carouselExampleFade .carousel-item::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(
-            135deg,
-            rgba(0, 0, 0, 0.3) 0%,
-            rgba(0, 0, 0, 0.1) 50%,
-            rgba(0, 0, 0, 0.2) 100%
-        );
-        z-index: 2;
-        transition: opacity 0.4s ease;
-    }
 
-    /* Hover effect on carousel container */
-    #carouselExampleFade:hover .carousel-item::before {
-        opacity: 0.8;
-    }
-
-    /* ===============================
-       INDIVIDUAL SLIDE HOVER EFFECTS
-       =============================== */
-
-    /* Slide 1 - Zoom & Brightness */
-    #carouselExampleFade .carousel-item:nth-child(1):hover img {
-        transform: scale(1.08);
-        filter: brightness(1.1) contrast(1.15) saturate(1.1);
-    }
-
-    /* Slide 2 - Subtle Tilt & Scale */
-    #carouselExampleFade .carousel-item:nth-child(2):hover img {
-        transform: rotate(1deg) scale(1.05);
-        filter: brightness(1.05) contrast(1.1) hue-rotate(5deg);
-    }
-
-    /* Slide 3 - Scale with Blur Focus */
-    #carouselExampleFade .carousel-item:nth-child(3):hover img {
-        transform: scale(1.06);
-        filter: brightness(1.2) contrast(1.2) blur(0.5px);
-    }
-
-    /* Slide 4 - Dramatic Scale */
-    #carouselExampleFade .carousel-item:nth-child(4):hover img {
-        transform: scale(1.12);
-        filter: brightness(1.15) contrast(1.25) saturate(1.2);
-    }
-
-    /* Slide 5 - Rotate & Scale */
-    #carouselExampleFade .carousel-item:nth-child(5):hover img {
-        transform: rotate(-1deg) scale(1.07);
-        filter: brightness(1.1) contrast(1.15) sepia(0.1);
-    }
-
-    /* ===============================
-       MODERN SHINE EFFECT (SLIDE 3)
-       =============================== */
-    #carouselExampleFade .carousel-item:nth-child(3)::after {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: -100%;
-        width: 30%;
-        height: 100%;
-        background: linear-gradient(
-            90deg,
-            transparent,
-            rgba(255, 255, 255, 0.4),
-            transparent
-        );
-        transform: skewX(-20deg);
-        z-index: 3;
-        transition: left 0.8s ease;
-        pointer-events: none;
-    }
-
-    #carouselExampleFade .carousel-item:nth-child(3):hover::after {
-        left: 100%;
-    }
-
-    /* ===============================
-       PARTICLE EFFECTS (SCOPED)
-       =============================== */
-    #carouselExampleFade .network-effect {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        pointer-events: none;
-        z-index: 4;
-        opacity: 0;
-        transition: opacity 0.4s ease;
-    }
-
-    #carouselExampleFade .carousel-item:hover .network-effect {
-        opacity: 1;
-    }
-
-    /* ===============================
-       MODERN CAROUSEL CONTROLS
-       =============================== */
-    #carouselExampleFade .carousel-control-prev,
-    #carouselExampleFade .carousel-control-next {
-        width: 60px;
-        height: 60px;
-        top: 50%;
-        transform: translateY(-50%);
-        background: rgba(255, 255, 255, 0.1);
-        backdrop-filter: blur(10px);
-        border-radius: 50%;
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        transition: all 0.3s ease;
-        opacity: 0;
-        z-index: 10;
-    }
-
-    #carouselExampleFade .carousel-control-prev {
-        left: 20px;
-    }
-
-    #carouselExampleFade .carousel-control-next {
-        right: 20px;
-    }
-
-    #carouselExampleFade:hover .carousel-control-prev,
-    #carouselExampleFade:hover .carousel-control-next {
-        opacity: 1;
-    }
-
-    #carouselExampleFade .carousel-control-prev:hover,
-    #carouselExampleFade .carousel-control-next:hover {
-        background: rgba(255, 255, 255, 0.2);
-        transform: translateY(-50%) scale(1.1);
-        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-    }
-
-    #carouselExampleFade .carousel-control-prev-icon,
-    #carouselExampleFade .carousel-control-next-icon {
-        width: 20px;
-        height: 20px;
-        filter: invert(1);
-    }
-
-    /* ===============================
-       MODERN CAROUSEL INDICATORS
-       =============================== */
-    #carouselExampleFade .carousel-indicators {
-        bottom: 20px;
-        margin: 0;
-    }
-
-    #carouselExampleFade .carousel-indicators button {
-        width: 12px;
-        height: 12px;
-        border-radius: 50%;
-        border: 2px solid rgba(255, 255, 255, 0.5);
-        background: transparent;
-        margin: 0 8px;
-        transition: all 0.3s ease;
-        opacity: 0.7;
-    }
-
-    #carouselExampleFade .carousel-indicators button.active {
-        background: rgba(255, 255, 255, 0.9);
-        transform: scale(1.2);
-        opacity: 1;
-        box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
-    }
-
-    #carouselExampleFade .carousel-indicators button:hover {
-        background: rgba(255, 255, 255, 0.7);
-        transform: scale(1.1);
-    }
-
-    /* ===============================
-       RESPONSIVE ADJUSTMENTS
-       =============================== */
-    @media (max-width: 768px) {
-        #carouselExampleFade .carousel-item img {
-            height: 400px;
-        }
-
-        #carouselExampleFade .carousel-control-prev,
-        #carouselExampleFade .carousel-control-next {
-            width: 45px;
-            height: 45px;
-        }
-
-        #carouselExampleFade .carousel-control-prev {
-            left: 10px;
-        }
-
-        #carouselExampleFade .carousel-control-next {
-            right: 10px;
-        }
-    }
-
-    /* ===============================
-       SMOOTH TRANSITIONS FOR SLIDES
-       =============================== */
-    #carouselExampleFade .carousel-item.active {
-        animation: slideInSmooth 0.8s ease-out;
-    }
-
-    @keyframes slideInSmooth {
-        from {
-            opacity: 0;
-            transform: translateX(30px);
-        }
-        to {
-            opacity: 1;
-            transform: translateX(0);
-        }
-    }
-
-    /* Prevent hover effects from affecting other page elements */
-    .carousel-item,
-    .carousel-item img,
-    .carousel-item::before,
-    .carousel-item::after,
-    .network-effect {
-        /* Ensure these styles only apply within carousel */
-    }
-</style>
-
- 
 </head>
+
 <body>
-    <!-- Navbar -->
-    <div id="navbar"></div>
+  <!-- Navbar -->
+  <div id="navbar"></div>
 
-     
-  
-<div class="container-fluid p-0">
-  <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
-    <!-- Carousel Indicators -->
-    <div class="carousel-indicators">
-      <button type="button" data-bs-target="#carouselExampleFade" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-      <button type="button" data-bs-target="#carouselExampleFade" data-bs-slide-to="1" aria-label="Slide 2"></button>
-      <button type="button" data-bs-target="#carouselExampleFade" data-bs-slide-to="2" aria-label="Slide 3"></button>
-      <button type="button" data-bs-target="#carouselExampleFade" data-bs-slide-to="3" aria-label="Slide 4"></button>
-      <button type="button" data-bs-target="#carouselExampleFade" data-bs-slide-to="4" aria-label="Slide 5"></button>
+
+
+  <div class="container-fluid p-0">
+    <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
+      <!-- Carousel Indicators -->
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleFade" data-bs-slide-to="0" class="active"
+          aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleFade" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleFade" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        <button type="button" data-bs-target="#carouselExampleFade" data-bs-slide-to="3" aria-label="Slide 4"></button>
+        <button type="button" data-bs-target="#carouselExampleFade" data-bs-slide-to="4" aria-label="Slide 5"></button>
+      </div>
+
+      <div class="carousel-inner">
+        <div class="carousel-item active position-relative">
+          <img class="d-block w-100"
+            src="https://s44885.pcdn.co/wp-content/uploads/2019/09/Fotolia_257957753_Subscription_Monthly_M.jpg"
+            alt="First slide">
+          <div class="network-effect" id="particles-slide-1"></div>
+        </div>
+
+        <div class="carousel-item position-relative">
+          <img class="d-block w-100"
+            src="https://fsa2-assets.imgix.net/assets/iStock-1363104964.jpg?auto=compress%2Cformat&crop=focalpoint&fit=crop&h=675&w=1200"
+            alt="Second slide">
+          <div class="network-effect" id="particles-slide-2"></div>
+        </div>
+
+        <div class="carousel-item  position-relative">
+          <img class="d-block w-100" src="https://cygnotechlabs.com/wp-content/uploads/2023/11/DA-scaled.jpg"
+            alt="Third slide">
+          <div class="network-effect" id="particles-slide-3"></div>
+        </div>
+
+        <div class="carousel-item  position-relative">
+          <img class="d-block w-100" src="https://img.lovepik.com/photo/48002/9382.jpg_wh860.jpg" alt="Fourth slide">
+          <div class="network-effect" id="particles-slide-4"></div>
+        </div>
+
+        <div class="carousel-item  position-relative">
+          <img class="d-block w-100"
+            src="https://www.timedoctor.com/blog/images/2021/09/Tips-to-Improve-Teamwork-In-The-Workplace1.jpg"
+            alt="Fifth slide">
+          <div class="network-effect" id="particles-slide-5"></div>
+        </div>
+      </div>
+
+      <!-- Controls -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
     </div>
-
-    <div class="carousel-inner">
-      <div class="carousel-item active position-relative">
-        <img class="d-block w-100" 
-             src="https://s44885.pcdn.co/wp-content/uploads/2019/09/Fotolia_257957753_Subscription_Monthly_M.jpg"
-             alt="First slide">
-        <div class="network-effect" id="particles-slide-1"></div>
-      </div>
-
-      <div class="carousel-item position-relative">
-        <img class="d-block w-100" 
-             src="https://fsa2-assets.imgix.net/assets/iStock-1363104964.jpg?auto=compress%2Cformat&crop=focalpoint&fit=crop&h=675&w=1200"
-             alt="Second slide">
-        <div class="network-effect" id="particles-slide-2"></div>
-      </div>
-
-      <div class="carousel-item  position-relative">
-        <img class="d-block w-100" 
-             src="https://cygnotechlabs.com/wp-content/uploads/2023/11/DA-scaled.jpg"
-             alt="Third slide">
-        <div class="network-effect" id="particles-slide-3"></div>
-      </div>
-
-      <div class="carousel-item  position-relative">
-        <img class="d-block w-100"
-             src="https://img.lovepik.com/photo/48002/9382.jpg_wh860.jpg"
-             alt="Fourth slide">
-        <div class="network-effect" id="particles-slide-4"></div>
-      </div>
-
-      <div class="carousel-item  position-relative">
-        <img class="d-block w-100"
-             src="https://www.timedoctor.com/blog/images/2021/09/Tips-to-Improve-Teamwork-In-The-Workplace1.jpg"
-             alt="Fifth slide">
-        <div class="network-effect" id="particles-slide-5"></div>
-      </div>
-    </div>
-
-    <!-- Controls -->
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
   </div>
-</div>
 
-<!-- Bootstrap JS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-<!-- tsparticles -->
-<script src="https://cdn.jsdelivr.net/npm/tsparticles@2.9.3/tsparticles.bundle.min.js"></script>
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- tsparticles -->
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.9.3/tsparticles.bundle.min.js"></script>
 
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-    const slides = ["particles-slide-1", "particles-slide-2", "particles-slide-3", "particles-slide-4", "particles-slide-5"];
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const slides = ["particles-slide-1", "particles-slide-2", "particles-slide-3", "particles-slide-4", "particles-slide-5"];
 
-    slides.forEach(id => {
+      slides.forEach(id => {
         tsParticles.load(id, {
-            particles: {
-                number: { value: 40 },
-                color: { value: "#ffffff" },
-                shape: { type: "circle" },
-                opacity: { 
-                    value: 0.6,
-                    random: true,
-                    animation: {
-                        enable: true,
-                        speed: 1,
-                        minimumValue: 0.3
-                    }
-                },
-                size: { 
-                    value: 2, 
-                    random: true,
-                    animation: {
-                        enable: true,
-                        speed: 2,
-                        minimumValue: 1
-                    }
-                },
+          particles: {
+            number: { value: 40 },
+            color: { value: "#ffffff" },
+            shape: { type: "circle" },
+            opacity: {
+              value: 0.6,
+              random: true,
+              animation: {
+                enable: true,
+                speed: 1,
+                minimumValue: 0.3
+              }
+            },
+            size: {
+              value: 2,
+              random: true,
+              animation: {
+                enable: true,
+                speed: 2,
+                minimumValue: 1
+              }
+            },
+            line_linked: {
+              enable: true,
+              distance: 100,
+              color: "#ffffff",
+              opacity: 0.5,
+              width: 1
+            },
+            move: {
+              enable: true,
+              speed: 1.5,
+              direction: "none",
+              random: true,
+              straight: false,
+              outModes: {
+                default: "bounce"
+              }
+            }
+          },
+          interactivity: {
+            detectsOn: "parent",
+            events: {
+              onhover: {
+                enable: true,
+                mode: "grab"
+              }
+            },
+            modes: {
+              grab: {
+                distance: 120,
                 line_linked: {
-                    enable: true,
-                    distance: 100,
-                    color: "#ffffff",
-                    opacity: 0.5,
-                    width: 1
-                },
-                move: { 
-                    enable: true, 
-                    speed: 1.5,
-                    direction: "none",
-                    random: true,
-                    straight: false,
-                    outModes: {
-                        default: "bounce"
-                    }
+                  opacity: 0.8
                 }
-            },
-            interactivity: {
-                detectsOn: "parent",
-                events: { 
-                    onhover: { 
-                        enable: true, 
-                        mode: "grab" 
-                    } 
-                },
-                modes: { 
-                    grab: { 
-                        distance: 120, 
-                        line_linked: { 
-                            opacity: 0.8 
-                        } 
-                    } 
-                }
-            },
-            background: {
-                opacity: 0
-            },
-            retina_detect: true
+              }
+            }
+          },
+          background: {
+            opacity: 0
+          },
+          retina_detect: true
         });
-    });
+      });
 
-    // Enhanced carousel behavior
-    const carousel = document.getElementById('carouselExampleFade');
-    
-    // Pause on hover
-    carousel.addEventListener('mouseenter', () => {
+      // Enhanced carousel behavior
+      const carousel = document.getElementById('carouselExampleFade');
+
+      // Pause on hover
+      carousel.addEventListener('mouseenter', () => {
         bootstrap.Carousel.getInstance(carousel)?.pause();
-    });
-    
-    carousel.addEventListener('mouseleave', () => {
-        bootstrap.Carousel.getInstance(carousel)?.cycle();
-    });
+      });
 
-    // Smooth transitions
-    carousel.addEventListener('slide.bs.carousel', (event) => {
+      carousel.addEventListener('mouseleave', () => {
+        bootstrap.Carousel.getInstance(carousel)?.cycle();
+      });
+
+      // Smooth transitions
+      carousel.addEventListener('slide.bs.carousel', (event) => {
         const activeItem = event.relatedTarget;
         activeItem.style.animation = 'slideInSmooth 0.8s ease-out';
+      });
     });
-});
-</script>
+  </script>
 
 
 
 
-<!-- 🌐 Data Solution Provider Section -->
-<section class="data-solution py-5">
-  <div class="">
-    <div class="row align-items-center">
-      
-      <!-- Left: Image -->
-      <div class="col-md-6 mb-4 mb-md-0 text-center">
-        <img src="https://www.parallels.com/blogs/ras/app/uploads/2021/02/cloud-service-provider.jpg" 
-             alt="Data Solution Provider" 
-             class="img-fluid rounded-3 shadow-lg" 
-             style="max-height: 380px;">
+  <!-- 🌐 Data Solution Provider Section -->
+  <section class="data-solution py-5">
+    <div class="">
+      <div class="row align-items-center">
+
+        <!-- Left: Image -->
+        <div class="col-md-6 mb-4 mb-md-0 text-center">
+          <img src="https://www.parallels.com/blogs/ras/app/uploads/2021/02/cloud-service-provider.jpg"
+            alt="Data Solution Provider" class="img-fluid rounded-3 shadow-lg" style="max-height: 380px;">
+        </div>
+
+        <!-- Right: Content -->
+        <div class="col-md-6">
+          <h2 class="fw-bold mb-3">
+            Your Trusted Data Solution Provider
+          </h2>
+          <p class="mb-3">
+            At <strong>Data Snap Solutions Inc.</strong>, we provide cutting-edge data solutions
+            that empower businesses to make informed decisions and accelerate growth.
+            Our comprehensive B2B database ensures accuracy, reliability, and scalability
+            for organizations across industries.
+          </p>
+          <p class="mb-4">
+            Whether you’re a startup or an enterprise, our tailored solutions help you
+            harness the power of data to uncover opportunities, streamline operations,
+            and achieve measurable success.
+          </p>
+
+          <!-- Call to Action -->
+          <a href="#contact" class="btn btn-lg rounded-pill shadow-sm" style="color:#01024f; border: 0.5px solid #01024f;">
+            <i class="fas fa-database me-2"></i> Explore Solutions
+          </a>
+        </div>
+
       </div>
-
-      <!-- Right: Content -->
-      <div class="col-md-6">
-        <h2 class="fw-bold mb-3">
-          Your Trusted <span class="text-primary">Data Solution Provider</span>
-        </h2>
-        <p class="mb-3">
-          At <strong>Data Snap Solutions Inc.</strong>, we provide cutting-edge data solutions 
-          that empower businesses to make informed decisions and accelerate growth. 
-          Our comprehensive B2B database ensures accuracy, reliability, and scalability 
-          for organizations across industries.
-        </p>
-        <p class="mb-4">
-          Whether you’re a startup or an enterprise, our tailored solutions help you 
-          harness the power of data to uncover opportunities, streamline operations, 
-          and achieve measurable success.
-        </p>
-        
-        <!-- Call to Action -->
-        <a href="#contact" class="btn btn-primary btn-lg rounded-pill shadow-sm">
-          <i class="fas fa-database me-2"></i> Explore Solutions
-        </a>
-      </div>
-
     </div>
-  </div>
-</section>
+  </section>
 
 
 
 
-      <!-- About Section -->
+  <!-- About Section -->
   <!-- <section class="about-section">
     <div class="container">
       <div class="row align-items-center">
@@ -509,173 +254,220 @@ document.addEventListener("DOMContentLoaded", () => {
     </div>
   </section> -->
 
-  
+
 
 
   <!-- services -->
 
-   <div class="services-section " >
-        <div class="container ">
-            <h2 class="section-title" style="color: #0a165a;">OUR SERVICES</h2>
-            
-            <div class="row">
-                <!-- B2B Data -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="service-card">
-                        <img src="https://ibsoln.com/wp-content/uploads/2021/11/b2b.webp" alt="B2B Data" class="card-image">
-                        
-                        <div class="service-icon b2b-icon">
-                            <i class="fas fa-chart-line"></i>
-                        </div>
-                        
-                        <div class="card-content">
-                            <h3 class="card-title">B2B DATA</h3>
-                        </div>
-                        
-                        <div class="hover-overlay">
-                            <a class="read-more-btn" href="/pages/b2b-data.html">
-                                Read More
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
+  <div class="services-section ">
+    <div class="container ">
+      <h2 class="section-title" style="color:#000000;">OUR SERVICES</h2>
 
-                <!-- Key Decision Makers Data -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="service-card">
-                        <img src="https://www.morebusiness.com/wp-content/uploads/2018/03/how-to-get-to-the-decision-maker.jpg" alt="Key Decision Makers" class="card-image">
-                        
-                        <div class="service-icon decision-icon">
-                            <i class="fas fa-users"></i>
-                        </div>
-                        
-                        <div class="card-content">
-                            <h3 class="card-title">KEY DECISION MAKERS DATA</h3>
-                        </div>
-                        
-                        <div class="hover-overlay">
-                            <a class="read-more-btn" href="/pages/key-design-data.html">
-                                Read More
-                            </a>
-                        </div>
-                    </div>
-                </div>
+      <div class="row">
+        <!-- B2B Data -->
+        <div class="col-lg-4 col-md-6">
+          <div class="service-card">
+            <img src="https://ibsoln.com/wp-content/uploads/2021/11/b2b.webp" alt="B2B Data" class="card-image">
 
-                <!-- Technology Data -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="service-card">
-                        <img src="https://d2nzy1qhita6w.cloudfront.net/media/magefan_blog/data-analysis-skills-duties-responsibilities.jpeg" alt="Technology Data" class="card-image">
-                        
-                        <div class="service-icon tech-icon">
-                            <i class="fas fa-microchip"></i>
-                        </div>
-                        
-                        <div class="card-content">
-                            <h3 class="card-title">TECHNOLOGY DATA</h3>
-                        </div>
-                        
-                        <div class="hover-overlay">
-                            <a class="read-more-btn" href="/pages/tech-data.html">
-                                Read More
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Industry Data -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="service-card">
-                        <img src="https://www.dasca.org/Content/Images/main/industrial-data-scientist-the-new-limb-of-industrial-workforce.jpg" alt="Industry Data" class="card-image">
-                        
-                        <div class="service-icon industry-icon">
-                            <i class="fas fa-industry"></i>
-                        </div>
-                        
-                        <div class="card-content">
-                            <h3 class="card-title">INDUSTRY DATA</h3>
-                        </div>
-                        
-                        <div class="hover-overlay">
-                            <a class="read-more-btn" href="/pages/industry.html">
-                                Read More
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Healthcare Data -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="service-card">
-                        <img src="https://kms-healthcare.com/wp-content/uploads/2024/06/Healthcare-Data-Management-KMS-6.webp" alt="Healthcare Data" class="card-image">
-                        
-                        <div class="service-icon healthcare-icon">
-                            <i class="fas fa-heartbeat"></i>
-                        </div>
-                        
-                        <div class="card-content">
-                            <h3 class="card-title">HEALTHCARE DATA</h3>
-                        </div>
-                        
-                        <div class="hover-overlay">
-                            <a class="read-more-btn" href="/pages/healthcare.html">
-                                Read More
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Data Append -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="service-card">
-                        <img src="https://www.energy.gov/sites/default/files/2019/06/f63/042219-foa-data.jpg" alt="Data Append" class="card-image">
-                        
-                        <div class="service-icon append-icon">
-                            <i class="fas fa-database"></i>
-                        </div>
-                        
-                        <div class="card-content">
-                            <h3 class="card-title">DATA APPEND</h3>
-                        </div>
-                        
-                        <div class="hover-overlay">
-                            <a class="read-more-btn" href="/pages/data-append.html">
-                                Read More
-                            </a>
-                        </div>
-                    </div>
-                </div>
+            <div class="service-icon b2b-icon">
+              <i class="fas fa-chart-line"></i>
             </div>
+
+            <div class="card-content">
+              <h3 class="card-title">B2B DATA</h3>
+            </div>
+
+            <div class="hover-overlay">
+              <a class="read-more-btn" href="/pages/b2b-data.html">
+                Read More
+              </a>
+            </div>
+          </div>
         </div>
+
+
+        <!-- Key Decision Makers Data -->
+        <div class="col-lg-4 col-md-6">
+          <div class="service-card">
+            <img src="https://www.morebusiness.com/wp-content/uploads/2018/03/how-to-get-to-the-decision-maker.jpg"
+              alt="Key Decision Makers" class="card-image">
+
+            <div class="service-icon decision-icon">
+              <i class="fas fa-users"></i>
+            </div>
+
+            <div class="card-content">
+              <h3 class="card-title">KEY DECISION MAKERS DATA</h3>
+            </div>
+
+            <div class="hover-overlay">
+              <a class="read-more-btn" href="/pages/key-design-data.html">
+                Read More
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Technology Data -->
+        <div class="col-lg-4 col-md-6">
+          <div class="service-card">
+            <img
+              src="https://d2nzy1qhita6w.cloudfront.net/media/magefan_blog/data-analysis-skills-duties-responsibilities.jpeg"
+              alt="Technology Data" class="card-image">
+
+            <div class="service-icon tech-icon">
+              <i class="fas fa-microchip"></i>
+            </div>
+
+            <div class="card-content">
+              <h3 class="card-title">TECHNOLOGY DATA</h3>
+            </div>
+
+            <div class="hover-overlay">
+              <a class="read-more-btn" href="/pages/tech-data.html">
+                Read More
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Industry Data -->
+        <div class="col-lg-4 col-md-6">
+          <div class="service-card">
+            <img
+              src="https://www.dasca.org/Content/Images/main/industrial-data-scientist-the-new-limb-of-industrial-workforce.jpg"
+              alt="Industry Data" class="card-image">
+
+            <div class="service-icon industry-icon">
+              <i class="fas fa-industry"></i>
+            </div>
+
+            <div class="card-content">
+              <h3 class="card-title">INDUSTRY DATA</h3>
+            </div>
+
+            <div class="hover-overlay">
+              <a class="read-more-btn" href="/pages/industry.html">
+                Read More
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Healthcare Data -->
+        <div class="col-lg-4 col-md-6">
+          <div class="service-card">
+            <img src="https://kms-healthcare.com/wp-content/uploads/2024/06/Healthcare-Data-Management-KMS-6.webp"
+              alt="Healthcare Data" class="card-image">
+
+            <div class="service-icon healthcare-icon">
+              <i class="fas fa-heartbeat"></i>
+            </div>
+
+            <div class="card-content">
+              <h3 class="card-title">HEALTHCARE DATA</h3>
+            </div>
+
+            <div class="hover-overlay">
+              <a class="read-more-btn" href="/pages/healthcare.html">
+                Read More
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Data Append -->
+        <div class="col-lg-4 col-md-6">
+          <div class="service-card">
+            <img src="https://www.energy.gov/sites/default/files/2019/06/f63/042219-foa-data.jpg" alt="Data Append"
+              class="card-image">
+
+            <div class="service-icon append-icon">
+              <i class="fas fa-database"></i>
+            </div>
+
+            <div class="card-content">
+              <h3 class="card-title">DATA APPEND</h3>
+            </div>
+
+            <div class="hover-overlay">
+              <a class="read-more-btn" href="/pages/data-append.html">
+                Read More
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
 
 
-    
+
   <!-- Main Section with Stats + Why Choose Us -->
-  <section class="main-section">
+  <section class="main-section" style="color: #01024f !important;">
     <div class="container">
       <div class="row align-items-center">
         <!-- Stats -->
         <div class="col-lg-6">
           <div class="row">
-            <div class="col-md-6"><div class="stat-card"><div class="stat-number" data-count="1500">0 <span>+</span></div><div class="stat-label">Projects Completed</div></div></div>
-            <div class="col-md-6"><div class="stat-card"><div class="stat-number" data-count="500">0</div><div class="stat-label">Repeat Clients</div></div></div>
-            <div class="col-md-6"><div class="stat-card"><div class="stat-number" data-count="1000">0</div><div class="stat-label">New Clients</div></div></div>
-            <div class="col-md-6"><div class="stat-card"><div class="stat-number" data-count="40">0</div><div class="stat-label">Ongoing Projects</div></div></div>
+            <div class="col-md-6">
+              <div class="stat-card">
+                <div class="stat-number" data-count="1800">0 +</div>
+                <div class="stat-label">Projects Completed</div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="stat-card">
+                <div class="stat-number" data-count="900">0</div>
+                <div class="stat-label">Repeat Clients</div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="stat-card">
+                <div class="stat-number" data-count="1000">0</div>
+                <div class="stat-label">New Clients</div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="stat-card">
+                <div class="stat-number" data-count="190">0</div>
+                <div class="stat-label">Ongoing Projects</div>
+              </div>
+            </div>
           </div>
         </div>
         <!-- Why Choose Us -->
         <div class="col-lg-6">
-          <div class="why-choose-content">
+          <div class="why-choose-content"  style="color: #00bef7 !important;" >
             <h2 class="section-title">WHY CHOOSE US</h2>
-            <p class="description-text">Data Snap Solutions Inc. has within the company IT mavens who are erudite in data solutions, database management, and data-driven marketing. We let you structure your data and have complete control of it.</p>
+            <p class="description-text">Data Snap Solutions Inc. has within the company IT mavens who are erudite in
+              data solutions, database management, and data-driven marketing. We let you structure your data and have
+              complete control of it.</p>
             <div class="features-grid">
-              <div class="feature-item"><div class="feature-icon"><i class="fas fa-briefcase"></i></div><p class="feature-text">Expert & Professional</p></div>
-              <div class="feature-item"><div class="feature-icon"><i class="fas fa-gem"></i></div><p class="feature-text">Professional Approach</p></div>
-              <div class="feature-item"><div class="feature-icon"><i class="fas fa-trophy"></i></div><p class="feature-text">High Quality Work</p></div>
-              <div class="feature-item"><div class="feature-icon"><i class="fas fa-thumbs-up"></i></div><p class="feature-text">Satisfaction Guarantee</p></div>
-              <div class="feature-item"><div class="feature-icon"><i class="fas fa-bolt"></i></div><p class="feature-text">Quick Response</p></div>
-              <div class="feature-item"><div class="feature-icon"><i class="fas fa-clock"></i></div><p class="feature-text">24/7 Support</p></div>
+              <div class="feature-item">
+                <div class="feature-icon"><i class="fas fa-briefcase"></i></div>
+                <p class="feature-text">Expert & Professional</p>
+              </div>
+              <div class="feature-item">
+                <div class="feature-icon"><i class="fas fa-gem"></i></div>
+                <p class="feature-text">Professional Approach</p>
+              </div>
+              <div class="feature-item">
+                <div class="feature-icon"><i class="fas fa-trophy"></i></div>
+                <p class="feature-text">High Quality Work</p>
+              </div>
+              <div class="feature-item">
+                <div class="feature-icon"><i class="fas fa-thumbs-up"></i></div>
+                <p class="feature-text">Satisfaction Guarantee</p>
+              </div>
+              <div class="feature-item">
+                <div class="feature-icon"><i class="fas fa-bolt"></i></div>
+                <p class="feature-text">Quick Response</p>
+              </div>
+              <div class="feature-item">
+                <div class="feature-icon"><i class="fas fa-clock"></i></div>
+                <p class="feature-text">24/7 Support</p>
+              </div>
             </div>
           </div>
         </div>
@@ -686,24 +478,39 @@ document.addEventListener("DOMContentLoaded", () => {
   <!-- Clients Section -->
   <section class="clients-section">
     <div class="container-fluid">
-      <h2 class="clients-title">OUR CLIENTS</h2>
+      <h2 class="clients-title" >OUR CLIENTS</h2>
       <div class="client-carousel">
         <div class="client-track">
-          <div class="client-card"><div class="client-logo">CHEMICALS LIMITED</div></div>
-          <div class="client-card"><div class="client-logo">MTPAK</div></div>
-          <div class="client-card"><div class="client-logo">Western Automation<br><small>R&D</small></div></div>
-          <div class="client-card"><div class="client-logo">SESCO</div></div>
-          <div class="client-card"><div class="client-logo">TECH INNOVATIONS</div></div>
-          <div class="client-card"><div class="client-logo">DATA MASTERS</div></div>
-          <div class="client-card"><div class="client-logo">DIGITAL SOLUTIONS</div></div>
-          <div class="client-card"><div class="client-logo">SMART SYSTEMS</div></div>
+          <div class="client-card">
+            <div class="client-logo">CHEMICALS LIMITED</div>
+          </div>
+          <div class="client-card">
+            <div class="client-logo">MTPAK</div>
+          </div>
+          <div class="client-card">
+            <div class="client-logo">Western Automation<br><small>R&D</small></div>
+          </div>
+          <div class="client-card">
+            <div class="client-logo">SESCO</div>
+          </div>
+          <div class="client-card">
+            <div class="client-logo">TECH INNOVATIONS</div>
+          </div>
+          <div class="client-card">
+            <div class="client-logo">DATA MASTERS</div>
+          </div>
+          <div class="client-card">
+            <div class="client-logo">DIGITAL SOLUTIONS</div>
+          </div>
+          <div class="client-card">
+            <div class="client-logo">SMART SYSTEMS</div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
   <script>
- 
     // Counter Animation
     function animateCounters() {
       const counters = document.querySelectorAll('.stat-number');
@@ -714,144 +521,287 @@ document.addEventListener("DOMContentLoaded", () => {
             const finalCount = parseInt(target.dataset.count);
             let currentCount = 0;
             const increment = finalCount / 100;
+
             const timer = setInterval(() => {
               currentCount += increment;
               if (currentCount >= finalCount) {
-                target.textContent = finalCount.toLocaleString();
+                target.textContent = finalCount.toLocaleString() + ' +'; // ✅ append +
                 clearInterval(timer);
               } else {
-                target.textContent = Math.floor(currentCount).toLocaleString();
+                target.textContent = Math.floor(currentCount).toLocaleString() + ' +'; // ✅ append +
               }
             }, 20);
+
             observer.unobserve(target);
           }
         });
       });
+
       counters.forEach(counter => observer.observe(counter));
     }
 
     document.addEventListener('DOMContentLoaded', animateCounters);
- 
   </script>
+
 
   <!-- end our clients -->
 
   <!-- Trusted B2B Partner Section -->
-<section class="py-5 bg-light text-center">
-  <div class="container">
-    <h2 class="fw-bold text-primary mb-3">
-      Our Trusted B2B Partner Across <span class="text-dark">6 Countries</span>
-    </h2>
-    <p class="lead mb-4">
-      Globally Registered. Locally Trusted.
-    </p>
+  <section class="py-5 bg-light text-center">
+    <div class="container">
+      <h2 class="fw-bold mb-3" style="color: #000000;">
+        Our Trusted B2B Partner Across 6 Countries
+      </h2>
+      <p class="lead mb-4">
+        Globally Registered. Locally Trusted.
+      </p>
 
-    <div class="row justify-content-center">
-      <div class="col-md-10">
-        <div class="d-flex flex-wrap justify-content-center gap-3">
-          <span class="badge bg-primary p-3 fs-6 rounded-pill shadow-sm">USA</span>
-          <span class="badge bg-primary p-3 fs-6 rounded-pill shadow-sm">Australia</span>
-          <span class="badge bg-primary p-3 fs-6 rounded-pill shadow-sm">Germany</span>
-          <span class="badge bg-primary p-3 fs-6 rounded-pill shadow-sm">UK</span>
-          <span class="badge bg-primary p-3 fs-6 rounded-pill shadow-sm">Singapore</span>
-          <span class="badge bg-primary p-3 fs-6 rounded-pill shadow-sm">India</span>
+      <div class="row justify-content-center">
+        <div class="col-md-10">
+          <div class="d-flex flex-wrap justify-content-center gap-3">
+            <span class="badge p-3 fs-6 shadow-sm" style="background-color: #01024f;">USA</span>
+            <span class="badge p-3 fs-6 shadow-sm" style="background-color: #01024f;">Australia</span>
+            <span class="badge p-3 fs-6 shadow-sm" style="background-color: #01024f;">Germany</span>
+            <span class="badge p-3 fs-6 shadow-sm" style="background-color: #01024f;">UK</span>
+            <span class="badge p-3 fs-6 shadow-sm" style="background-color: #01024f;">Singapore</span>
+            <span class="badge p-3 fs-6 shadow-sm" style="background-color: #01024f;">India</span>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-    <!-- Free Trial CTA -->
-    <section class="section-padding cta-section mb-5 ">
-        <div class="container text-center text-white cta-content">
-            <div class="icon-feature">
-                <i class="fas fa-rocket"></i>
+  <!-- Free Trial CTA -->
+  <section class="section-padding cta-section mb-5 ">
+    <div class="container text-center text-white cta-content">
+      <div class="icon-feature">
+        <i class="fas fa-rocket"></i>
+      </div>
+      <h2 class="display-5 fw-bold mb-4">Start Your Data Journey Today</h2>
+      
+      <a href="#trial" class="btn btn-light btn-lg me-3">
+        <i class="fas fa-play me-2"></i>Request Demo
+      </a>
+      <!-- <a href="#pricing" class="btn btn-outline-light btn-lg">
+        <i class="fas fa-dollar-sign me-2"></i>View Pricing
+      </a> -->
+    </div>
+  </section>
+
+  <!-- Case Studies / Success Stories Section -->
+  <section class="py-5 bg-light">
+    <div class="container-fluid">
+      <h2 class="fw-bold text-center mb-5" style="color:#000000;">Case Studies / Success Stories</h2>
+      <p class="text-center mb-5" style="font-weight: 500;">Our tailored databases have powered growth, outreach, and ROI across various
+        industries.
+        Here's how our clients have succeeded with our solutions:</p>
+
+
+      <div class="case-studies-wrapper">
+        <div class="case-studies-track">
+          <!-- Healthcare Industry -->
+          <div class="card shadow-sm p-4 case-card">
+            <div class="text-center mb-3"><i class="fas fa-heartbeat fa-2x card-icon"></i></div>
+            <h5 class="fw-bold">Healthcare Industry</h5>
+            <p><strong>Challenge:</strong> Reaching the right professionals for a product launch.</p>
+            <p><strong>Result:</strong> A healthcare client achieved 300% ROI in just one quarter using our targeted
+              attendee list for a medical trade show, converting warm leads into customers through precision outreach.
+            </p>
+            <div class="company-logo">
+              <img src="./images/healthcare/pfizer-logo.svg" alt="">
+              <img src="./images/healthcare/bayer-logo.svg" alt="">
+              <img src="./images/healthcare/max-logo.svg" alt="">
+              <img src="./images/healthcare/logo-az.png" alt="">
+              <img src="./images/healthcare/apollo-logo.svg" alt="">
             </div>
-            <h2 class="display-5 fw-bold mb-4">Start Your Data Journey Today</h2>
-            <p class="lead mb-4">Experience the power of premium data solutions with our 30-day free trial - no commitment required</p>
-            <a href="#trial" class="btn btn-light btn-lg me-3">
-                <i class="fas fa-play me-2"></i>Request Demo
-            </a>
-            <a href="#pricing" class="btn btn-outline-light btn-lg">
-                <i class="fas fa-dollar-sign me-2"></i>View Pricing
-            </a>
+          </div>
+
+
+          <!-- Construction Sector -->
+          <div class="card shadow-sm p-4 case-card">
+            <div class="text-center mb-3"><i class="fas fa-hard-hat fa-2x card-icon"></i></div>
+            <h5 class="fw-bold">Construction Sector</h5>
+            <p><strong>Challenge:</strong> Expanding market reach in multiple regions.</p>
+            <p><strong>Result:</strong> A construction company connected with 2,000+ verified decision-makers in under 3
+              months, using our Premium Database, accelerating business development and regional sales.</p>
+
+            <div class="logo2">
+              <img src="./images/construction/bechtel.jpg" alt="1">
+              <img src="./images/construction/morgan.png" alt="2">
+              <img src="./images/construction/tata.png" alt="3">
+              <img src="./images/construction/isg-logo.png" alt="4">
+              <img src="./images/construction/lt.jpg" alt="5">
+
+            </div>
+          </div>
+
+
+          <!-- Technology & SaaS -->
+          <div class="card shadow-sm p-4 case-card">
+            <div class="text-center mb-3"><i class="fas fa-microchip fa-2x card-icon"></i></div>
+            <h5 class="fw-bold">Technology & SaaS</h5>
+            <p><strong>Challenge:</strong> Scaling outbound sales for a SaaS platform.</p>
+            <p><strong>Result:</strong> A tech startup closed 5 enterprise deals worth $250K+ using our Custom Database
+              with detailed data points like tech stack, job titles, and decision-making authority.</p>
+            <div class="company-logo mt-4">
+              <img src="./images/Technology/adobe-logo.svg" alt="">
+              <img src="./images/Technology/microsoft.png" alt="">
+              <img src="./images/Technology/wipro_new_logo.svg" alt="">
+              <img src="./images/Technology/salesforce-with-type-logo.svg" alt="">
+              <img src="./images/Technology/zoom-logo.svg" alt="">
+
+            </div>
+          </div>
+
+
+          <!-- Finance & Insurance -->
+          <div class="card shadow-sm p-4 case-card">
+            <div class="text-center mb-3"><i class="fas fa-coins fa-2x card-icon"></i></div>
+            <h5 class="fw-bold">Finance & Insurance</h5>
+            <p><strong>Challenge:</strong> Reaching C-level executives in niche financial institutions.</p>
+            <p><strong>Result:</strong> A financial services firm improved email open rates by 65% and generated 200+
+              qualified leads in 6 weeks using our accurate, segmented contact lists.</p>
+            <div class="company-logo mt-5">
+              <img src="./images/Finance/allianz-logo.svg" alt="">
+              <img src="./images/Finance/logo-bnp.svg" alt="">
+              <img src="./images/Finance/common.png" alt="">
+              <img src="./images/Finance/SBI_Logo.png" alt="">
+
+            </div>
+          </div>
+
+
+          <!-- Education & EdTech -->
+          <div class="card shadow-sm p-4 case-card">
+            <div class="text-center mb-3"><i class="fas fa-school fa-2x card-icon"></i></div>
+            <h5 class="fw-bold">Education & EdTech</h5>
+            <p><strong>Challenge:</strong> Promoting a digital learning platform to school administrators.</p>
+            <p><strong>Result:</strong> An EdTech provider reached over 1,500 education decision-makers, boosting demo
+              bookings by 40% and shortening the sales cycle.</p>
+            <div class="company-logo mt-5">
+              <img src="./images/etech/coursera.svg" class="h-75" alt="">
+              <img src="./images/etech/k12-logo.svg" alt="">
+              <img src="./images/etech/logo-udemy.svg" alt="">
+              <img src="./images/etech/niit-logo.svg" alt="">
+            </div>
+          </div>
+
+
+          <!-- Manufacturing & Industrial -->
+          <div class="card shadow-sm p-4 case-card">
+            <div class="text-center mb-3"><i class="fas fa-industry fa-2x card-icon"></i></div>
+            <h5 class="fw-bold">Manufacturing & Industrial</h5>
+            <p><strong>Challenge:</strong> Breaking into a new B2B vertical.</p>
+            <p><strong>Result:</strong> A manufacturing firm used our Custom Package to identify and engage key
+              procurement officers across 500+ companies, resulting in a 60% increase in qualified meetings.</p>
+            <div class="company-logo mt-5">
+              <img src="./images/Manufacturing/boing-logo.png" alt="">
+              <img src="./images/Manufacturing/jsw.png" alt="">
+              <img src="./images/Manufacturing/ge-logo.svg" alt="">
+              <img src="./images/Manufacturing/abb.jpg" alt="">
+              <img src="./images/Manufacturing/abb.jpg" alt="">
+              <!-- <img src="./images/Manufacturing/jsw.png" alt=""> -->
+            </div>
+          </div>
+
+
+          <!-- Duplicate cards for infinite loop effect -->
+          <div class="card shadow-sm p-4 case-card">
+            <div class="text-center mb-3"><i class="fas fa-heartbeat fa-2x card-icon"></i></div>
+            <h5 class="fw-bold">Healthcare Industry</h5>
+            <p><strong>Challenge:</strong> Reaching the right professionals for a product launch.</p>
+            <p><strong>Result:</strong> A healthcare client achieved 300% ROI in just one quarter...</p>
+          </div>
+
+
+          <div class="card shadow-sm p-4 case-card">
+            <div class="text-center mb-3"><i class="fas fa-hard-hat fa-2x card-icon"></i></div>
+            <h5 class="fw-bold">Construction Sector</h5>
+            <p><strong>Challenge:</strong> Expanding market reach in multiple regions.</p>
+            <p><strong>Result:</strong> A construction company connected with 2,000+ verified decision-makers...</p>
+          </div>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
-    <script>
-        // Add smooth hover animations
-        document.querySelectorAll('.btn-light, .btn-outline-light').forEach(btn => {
-            btn.addEventListener('mouseenter', function() {
-                this.style.transform = 'translateY(-2px)';
-            });
-            
-            btn.addEventListener('mouseleave', function() {
-                this.style.transform = 'translateY(0)';
-            });
-        });
-    </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
-    <!-- Footer -->
-    <div id="footer"></div>
+  <script>
+    // Add smooth hover animations
+    document.querySelectorAll('.btn-light, .btn-outline-light').forEach(btn => {
+      btn.addEventListener('mouseenter', function () {
+        this.style.transform = 'translateY(-2px)';
+      });
+
+      btn.addEventListener('mouseleave', function () {
+        this.style.transform = 'translateY(0)';
+      });
+    });
+  </script>
+
+  <!-- Footer -->
+  <div id="footer"></div>
 
   <!-- Bootstrap 5 JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
-<script>
-  // Navbar & Footer
-  fetch('/pages/navbar.html').then(res => res.text()).then(data => {
-    document.getElementById('navbar').innerHTML = data;
-  });
-  fetch('/pages/footer.html').then(res => res.text()).then(data => {
-    document.getElementById('footer').innerHTML = data;
-  });
-
-  // Carousel animations
-  const carousel = document.getElementById('carouselExampleFade');
-  const carouselItems = carousel.querySelectorAll('.carousel-item');
-
-  carousel.addEventListener('slide.bs.carousel', () => {
-    carouselItems.forEach(item => {
-      item.querySelector('img').style.animation = 'none';
+  <script>
+    // Navbar & Footer
+    fetch('/pages/navbar.html').then(res => res.text()).then(data => {
+      document.getElementById('navbar').innerHTML = data;
     });
-  });
+    fetch('/pages/footer.html').then(res => res.text()).then(data => {
+      document.getElementById('footer').innerHTML = data;
+    });
 
-  carousel.addEventListener('slid.bs.carousel', () => {
-    const activeItem = carousel.querySelector('.carousel-item.active');
-    const activeImg = activeItem.querySelector('img');
-    const slideIndex = Array.from(carouselItems).indexOf(activeItem);
+    // Carousel animations
+    const carousel = document.getElementById('carouselExampleFade');
+    const carouselItems = carousel.querySelectorAll('.carousel-item');
 
-    setTimeout(() => {
-      switch(slideIndex) {
-        case 0: activeImg.style.animation = 'flipScale 0.8s ease-out forwards'; break;
-        case 1: activeImg.style.animation = 'slideInRight 0.8s ease-out forwards'; break;
-        case 2: activeImg.style.animation = 'flipScale 0.8s ease-out forwards'; break;
-        case 3: activeImg.style.animation = 'zoomRotate 0.8s ease-out forwards'; break;
-        case 4: activeImg.style.animation = 'slideInRight 0.8s ease-out forwards'; break;
-      }
-    }, 100);
-  });
+    carousel.addEventListener('slide.bs.carousel', () => {
+      carouselItems.forEach(item => {
+        item.querySelector('img').style.animation = 'none';
+      });
+    });
 
-  // Pause on hover
-  carousel.addEventListener('mouseenter', () => {
-    bootstrap.Carousel.getInstance(carousel).pause();
-  });
-  carousel.addEventListener('mouseleave', () => {
-    bootstrap.Carousel.getInstance(carousel).cycle();
-  });
+    carousel.addEventListener('slid.bs.carousel', () => {
+      const activeItem = carousel.querySelector('.carousel-item.active');
+      const activeImg = activeItem.querySelector('img');
+      const slideIndex = Array.from(carouselItems).indexOf(activeItem);
 
-  // Initial animation on load
-  window.addEventListener('load', () => {
-    const firstImg = carousel.querySelector('.carousel-item.active img');
-    setTimeout(() => { 
-      firstImg.style.animation = 'zoomRotate 0.8s ease-out forwards'; 
-    }, 500);
-  });
+      setTimeout(() => {
+        switch (slideIndex) {
+          case 0: activeImg.style.animation = 'flipScale 0.8s ease-out forwards'; break;
+          case 1: activeImg.style.animation = 'slideInRight 0.8s ease-out forwards'; break;
+          case 2: activeImg.style.animation = 'flipScale 0.8s ease-out forwards'; break;
+          case 3: activeImg.style.animation = 'zoomRotate 0.8s ease-out forwards'; break;
+          case 4: activeImg.style.animation = 'slideInRight 0.8s ease-out forwards'; break;
+        }
+      }, 100);
+    });
 
-  
+    // Pause on hover
+    carousel.addEventListener('mouseenter', () => {
+      bootstrap.Carousel.getInstance(carousel).pause();
+    });
+    carousel.addEventListener('mouseleave', () => {
+      bootstrap.Carousel.getInstance(carousel).cycle();
+    });
 
-</script>
+    // Initial animation on load
+    window.addEventListener('load', () => {
+      const firstImg = carousel.querySelector('.carousel-item.active img');
+      setTimeout(() => {
+        firstImg.style.animation = 'zoomRotate 0.8s ease-out forwards';
+      }, 500);
+    });
+
+
+
+  </script>
 
 </body>
+
 </html>

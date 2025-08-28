@@ -31,7 +31,7 @@ body {
   background: #000000;
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid var(--glass-border);
+  /* border-bottom: 1px solid var(--glass-border); */
   padding:20px 0;
   position: relative;
   z-index: 1000;
@@ -79,17 +79,17 @@ body {
   max-width: 700px;
 }
 
-.info-card {
-  background: rgba(255, 255, 255, 0.281); /* more transparent */
-  backdrop-filter: blur(15px); /* stronger blur */
-  -webkit-backdrop-filter: blur(15px); /* Safari support */
+/* .info-card {
+  background: rgba(255, 255, 255, 0.281); 
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px); 
   border-radius: 15px;
-  border: 1px solid rgba(255, 255, 255, 0.6); /* shiny white border */
+  border: 1px solid rgba(255, 255, 255, 0.6); 
   padding: 20px;
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.2); /* subtle glow */
+  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.2);
 }
 
 .info-card::before {
@@ -110,13 +110,13 @@ body {
 
 .info-card:hover::before {
   left: 100%;
-}
+} */
 
-.info-card:hover {
+/* .info-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 8px 30px rgba(255, 255, 255, 0.4); /* brighter glow on hover */
-  border-color: rgba(255, 255, 255, 0.9); /* shinier border on hover */
-}
+  box-shadow: 0 8px 30px rgba(255, 255, 255, 0.4); 
+  border-color: rgba(255, 255, 255, 0.9); 
+} */
 
 .info-icon {
   font-size: 18px;

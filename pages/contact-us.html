@@ -2,8 +2,9 @@
 <html lang="en">
 
 <head>
-    <title>Data Snap Solutions</title>
-    <link rel="icon" type="image/x-icon" href="/images/logo-icon.png">  <meta charset="utf-8">
+  <title>Data Snap Solutions</title>
+  <link rel="icon" type="image/x-icon" href="/images/logo-icon.png">
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- Bootstrap 5 CSS -->
@@ -140,29 +141,32 @@
   <!-- Contact Section -->
   <section class="contact-section container">
     <div class="row g-4">
-      
+
       <!-- Contact Form (Left Side) -->
       <div class="col-lg-6">
         <div class="contact-card">
           <h4 class="mb-4 fw-bold">Send us a Message</h4>
-          <form>
+          <form action="https://formsubmit.co/rasulabaccotech@gmail.com" method="POST">
             <div class="mb-3">
               <label class="form-label">Full Name</label>
-              <input type="text" class="form-control" placeholder="Your Name" required>
+              <input type="text" class="form-control" name="Name" placeholder="Your Name" required>
             </div>
             <div class="mb-3">
               <label class="form-label">Email Address</label>
-              <input type="email" class="form-control" placeholder="you@example.com" required>
+              <input type="email" class="form-control" name="Email" placeholder="you@example.com" required>
             </div>
             <div class="mb-3">
               <label class="form-label">Phone</label>
-              <input type="tel" class="form-control" placeholder="+1 234 567 890">
+              <input type="tel" class="form-control" name="Number" placeholder="+1 234 567 890">
             </div>
             <div class="mb-3">
               <label class="form-label">Message</label>
-              <textarea class="form-control" rows="5" placeholder="Type your message..." required></textarea>
+              <textarea class="form-control" rows="5" name="Message" placeholder="Type your message..."
+                required></textarea>
             </div>
-            <button type="submit" class="btn w-100" style="color: white; background-color: #01024f;">Send Message</button>
+            <input type="hidden" name="_next" value="https://vskk0p0d-5500.inc1.devtunnels.ms/pages/thank-you.html">
+            <button type="submit" class="btn w-100" style="color: white; background-color: #01024f;">Send
+              Message</button>
           </form>
         </div>
       </div>
@@ -218,4 +222,5 @@
   </script>
 
 </body>
+
 </html>

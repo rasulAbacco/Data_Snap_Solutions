@@ -8,7 +8,6 @@ body {
        MODERN CAROUSEL STYLES (SCOPED)
        =============================== */
 
-
 /* Carousel container */
 #carouselExampleFade {
   border-radius: 0;
@@ -281,7 +280,9 @@ body {
   flex-shrink: 0;
   text-align: center;
   border-radius: 10px;
-  transition: transform 0.5s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.5s ease,
+    box-shadow 0.3s ease;
 }
 
 .case-card:hover {
@@ -319,42 +320,169 @@ body {
 
 .company-logo {
   display: flex;
-  flex-wrap: nowrap;            /* allow logos to wrap to new lines */
-  justify-content: center;    /* center align logos */
+  flex-wrap: nowrap; /* allow logos to wrap to new lines */
+  justify-content: center; /* center align logos */
   align-items: center;
-  gap: 1rem;                  /* more spacing between logos */
+  gap: 1rem; /* more spacing between logos */
   margin-top: 1rem;
   padding: 0.5rem;
 }
 
 .company-logo img {
-  max-height:1.2rem;           /* consistent size */         /* prevent oversized logos */
-  object-fit: contain;   
-  transition: all 0.3s ease;  /* smooth hover effect */
+  max-height: 1.2rem; /* consistent size */ /* prevent oversized logos */
+  object-fit: contain;
+  transition: all 0.3s ease; /* smooth hover effect */
 }
 
-.company-logo img:hover {     /* bring color back on hover */
+.company-logo img:hover {
+  /* bring color back on hover */
   opacity: 1;
-  transform: scale(1.1);      /* pop effect */
+  transform: scale(1.1); /* pop effect */
 }
 
-.logo2{
+.logo2 {
   display: flex;
-  flex-wrap: nowrap;            /* allow logos to wrap to new lines */
-  justify-content: center;    /* center align logos */
+  flex-wrap: nowrap; /* allow logos to wrap to new lines */
+  justify-content: center; /* center align logos */
   align-items: center;
-  gap: 1rem;                  /* more spacing between logos */
+  gap: 1rem; /* more spacing between logos */
   margin-top: 1rem;
   padding: 0.5rem;
 }
 .logo2 img {
-    height:2.5rem;                  /* prevent oversized logos */
-  object-fit: contain;   
-  transition: all 0.3s ease;  
+  height: 2.5rem; /* prevent oversized logos */
+  object-fit: contain;
+  transition: all 0.3s ease;
   border-radius: 5px;
 }
 
-.logo2 img:hover {     /* bring color back on hover */
+.logo2 img:hover {
+  /* bring color back on hover */
   opacity: 1;
-  transform: scale(1.1);      /* pop effect */
+  transform: scale(1.1); /* pop effect */
+}
+
+
+/* ================================
+   DATA PARTNERS SECTION (ISOLATED)
+================================ */
+
+.data-partners-section {
+  padding: 80px 20px;
+  background-color: #f8fafc;
+  position: relative;
+  isolation: isolate;
+  min-height: 320px;
+}
+
+.data-partners-section .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Section title */
+.section-title {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 40px;
+  color: #0f172a;
+}
+
+/* Grid layout */
+.data-partners-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 40px;
+  place-items: center;
+}
+
+/* Card */
+.data-partner-card {
+  width: 100%;
+  max-width: 320px;
+  height: 180px; /* 🔑 more vertical room */
+
+  background-color: #ffffff;
+  border-radius: 14px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-decoration: none;
+  position: relative;
+  z-index: 1;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.data-partner-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
+}
+
+/* Stack logo + divider + role */
+.partner-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 🔑 UNIFORM LOGO SLOT (prevents layout break) */
+.partner-logo {
+  width: 180px;
+  height: 90px; /* fixed slot height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+/* Bounce Cure – perfect circle */
+.partner-logo.bounce-cure {
+  width: 105px;
+  height: 105px;
+
+  background-image: url("../images/rasul.jpg");
+  background-size: cover;
+  background-position: center;
+
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+/* Verify Emails */
+.partner-logo.veriemails {
+  background-image: url("../images/veriemails.png");
+}
+
+/* Global Business Alliance */
+.partner-logo.gba {
+  background-image: url("../images/global_business_alliance.png");
+}
+
+/* Divider under logo */
+.partner-divider {
+  width: 40px;
+  height: 2px;
+  background-color: #6366f1;
+  margin: 14px 0 10px;
+  border-radius: 2px;
+}
+
+/* Role text */
+.partner-role {
+  font-size: 13px;
+  font-weight: 600;
+  color: #475569;
+  text-align: center;
+  letter-spacing: 0.3px;
 }

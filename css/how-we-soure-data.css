@@ -82,6 +82,7 @@ body {
   padding: 6rem 2rem;
   max-width: 1200px;
   margin: 0 auto;
+  text-align: center;
 }
 
 .section-title {
@@ -228,10 +229,11 @@ body {
 .section-title {
   font-size: 2.5rem;
   font-weight: 700;
-  color: var(--white);
+  color:black;
   margin-bottom: 20px;
   position: relative;
   display: inline-block;
+  text-align: center;
 }
 
 .section-title::after {

@@ -124,6 +124,133 @@
     .btn-primary:hover {
       background-color: #0033cc;
     }
+
+
+    /* ================================
+   DATA PARTNERS SECTION (ISOLATED)
+================================ */
+
+    .data-partners-section {
+      padding: 40px 20px;
+      background-color: #ffffff;
+      position: relative;
+      isolation: isolate;
+      min-height: 320px;
+    }
+
+    .data-partners-section .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    /* Section title */
+    .section-title {
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 40px;
+      color: #0f172a;
+    }
+
+    /* Grid layout */
+    .data-partners-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 40px;
+      place-items: center;
+    }
+
+    /* Card */
+    .data-partner-card {
+      width: 100%;
+      max-width: 320px;
+      height: 180px;
+      /* 🔑 more vertical room */
+
+      background-color: #ffffff;
+      border-radius: 14px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      text-decoration: none;
+      position: relative;
+      z-index: 1;
+
+      transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+    }
+
+    .data-partner-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
+    }
+
+    /* Stack logo + divider + role */
+    .partner-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* 🔑 UNIFORM LOGO SLOT (prevents layout break) */
+    .partner-logo {
+      width: 180px;
+      height: 90px;
+      /* fixed slot height */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+    }
+
+    /* Bounce Cure – perfect circle */
+    .partner-logo.bounce-cure {
+      width: 105px;
+      height: 105px;
+
+      background-image: url("../images/rasul.jpg");
+      background-size: cover;
+      background-position: center;
+
+      border-radius: 50%;
+      overflow: hidden;
+    }
+
+    /* Verify Emails */
+    .partner-logo.veriemails {
+      background-image: url("../images/veriemails.png");
+    }
+
+    /* Global Business Alliance */
+    .partner-logo.gba {
+      background-image: url("../images/global_business_alliance.png");
+    }
+
+    /* Divider under logo */
+    .partner-divider {
+      width: 40px;
+      height: 2px;
+      background-color: #6366f1;
+      margin: 14px 0 10px;
+      border-radius: 2px;
+    }
+
+    /* Role text */
+    .partner-role {
+      font-size: 13px;
+      font-weight: 600;
+      color: #475569;
+      text-align: center;
+      letter-spacing: 0.3px;
+    }
   </style>
 </head>
 
@@ -164,7 +291,7 @@
               <textarea class="form-control" rows="5" name="Message" placeholder="Type your message..."
                 required></textarea>
             </div>
-            <input type="hidden" name="_next" value="https://vskk0p0d-5500.inc1.devtunnels.ms/pages/thank-you.html">
+            <input type="hidden" name="_next" value="http://127.0.0.1:5500/pages/thank-you.html">
             <button type="submit" class="btn w-100" style="color: white; background-color: #01024f;">Send
               Message</button>
           </form>
@@ -198,8 +325,48 @@
           </div>
         </div>
       </div>
+
+
     </div>
   </section>
+
+  <section class="data-partners-section">
+    <div class="container">
+      <h2 class="section-title">Our Partners</h2>
+
+      <div class="data-partners-grid">
+        <!-- Campaign partner - Bounce Cure -->
+        <a href="https://www.bouncecure.com/" target="_blank" rel="noopener noreferrer" class="data-partner-card">
+          <div class="partner-content">
+            <div class="partner-logo bounce-cure"></div>
+            <span class="partner-divider"></span>
+            <p class="partner-role">Campaign Partner</p>
+          </div>
+        </a>
+
+        <!-- Data verification partner - Verify Emails -->
+        <a href="https://www.veriemails.com/" target="_blank" rel="noopener noreferrer" class="data-partner-card">
+          <div class="partner-content">
+            <div class="partner-logo veriemails"></div>
+            <span class="partner-divider"></span>
+            <p class="partner-role">Data Verification Partner</p>
+          </div>
+        </a>
+
+        <!-- Data partner - Global Business Alliance -->
+        <a href="https://www.globalbusinessalliance.net" target="_blank" rel="noopener noreferrer"
+          class="data-partner-card">
+          <div class="partner-content">
+            <div class="partner-logo gba"></div>
+            <span class="partner-divider"></span>
+            <p class="partner-role">Data Partner</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+  <script src="/js/layout.js"></script>
+
 
   <div id="footer"></div>
 
@@ -207,19 +374,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
   <!-- Dynamic Navbar/Footer -->
-  <script>
-    fetch('/pages/navbar.html')
-      .then(res => res.text())
-      .then(data => {
-        document.getElementById('navbar').innerHTML = data;
-      });
 
-    fetch('/pages/footer.html')
-      .then(res => res.text())
-      .then(data => {
-        document.getElementById('footer').innerHTML = data;
-      });
-  </script>
 
 </body>
 

@@ -555,25 +555,14 @@
             </div>
         </div>
     </div>
+<script src="/js/layout.js"></script>
 
     <div id="footer"></div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         // Load Navbar dynamically
-        fetch('/pages/navbar.html')
-            .then(res => res.text())
-            .then(data => {
-                document.getElementById('navbar').innerHTML = data;
-            });
-
-        // Load Footer dynamically
-        fetch('/pages/footer.html')
-            .then(res => res.text())
-            .then(data => {
-                document.getElementById('footer').innerHTML = data;
-            });
-
+      
         // Toggle sections
         function toggleSection(header) {
             const content = header.nextElementSibling;

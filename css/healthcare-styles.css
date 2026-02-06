@@ -1,8 +1,8 @@
 .hero-section {
-  background-image: url("https://datasnapsolutionsinc.com/assets/images/services/gas-industry.jpg");
+  background-image: url("../images/health_care_bg.webp");
   background-size: cover;
   background-position: center;
-  height: 80vh;
+  height: 70vh;
   position: relative;
   display: flex;
   align-items: center;
@@ -97,7 +97,9 @@
   cursor: pointer;
   border: 1px solid #f4f8ff;
   transition: all 0.3s;
-  box-shadow: 3px 3px 9px #c5c5c5, -3px -3px 9px #f6faff;
+  box-shadow:
+    3px 3px 9px #c5c5c5,
+    -3px -3px 9px #f6faff;
   margin-bottom: 1rem;
 }
 
@@ -107,7 +109,9 @@
 }
 
 .button-boxes .btn:active {
-  box-shadow: inset 4px 4px 12px #c5c5c5, inset -4px -4px 12px #81a5e4;
+  box-shadow:
+    inset 4px 4px 12px #c5c5c5,
+    inset -4px -4px 12px #81a5e4;
   border: none;
   color: #0044ff;
 }

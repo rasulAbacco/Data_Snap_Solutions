@@ -5,10 +5,10 @@ body {
 }
 
 .hero-section {
-  background-image: url("https://datasnapsolutionsinc.com/assets/images/services/factory-consultent.jpg");
+  background-image: url("../images/technology_data_bg.jpg");
   background-size: cover;
   background-position: center;
-  height: 80vh;
+  height: 70vh;
   position: relative;
   display: flex;
   align-items: center;
@@ -84,7 +84,9 @@ body {
   cursor: pointer;
   border: 1px solid #f4f8ff;
   transition: all 0.3s;
-  box-shadow: 3px 3px 9px #c5c5c5, -3px -3px 9px #f6faff;
+  box-shadow:
+    3px 3px 9px #c5c5c5,
+    -3px -3px 9px #f6faff;
   margin-bottom: 2rem;
 }
 
@@ -95,7 +97,9 @@ body {
 
 .button-boxes .btn:active {
   color: #0044ff;
-  box-shadow: inset 4px 4px 12px #c5c5c5, inset -4px -4px 12px #81a5e4;
+  box-shadow:
+    inset 4px 4px 12px #c5c5c5,
+    inset -4px -4px 12px #81a5e4;
   border: none;
 }
 
@@ -128,19 +132,18 @@ body {
 }
 
 .main-div h3 {
-    color: #0044ff;
-    margin-bottom: 2rem !important;
+  color: #0044ff;
+  margin-bottom: 2rem !important;
 }
 .main-content {
-    display: flex;
-    gap: 2rem;
+  display: flex;
+  gap: 2rem;
 }
 
 .top-text {
-    max-width: 50%;
-    text-align: justify;
+  max-width: 50%;
+  text-align: justify;
 }
-
 
 /* ============================= */
 /*        RESPONSIVE STYLES      */

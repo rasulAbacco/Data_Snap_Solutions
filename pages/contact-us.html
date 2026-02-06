@@ -2,8 +2,9 @@
 <html lang="en">
 
 <head>
-    <title>Data Snap Solutions</title>
-    <link rel="icon" type="image/x-icon" href="/images/logo-icon.png">  <meta charset="utf-8">
+  <title>Data Snap Solutions</title>
+  <link rel="icon" type="image/x-icon" href="/images/logo-icon.png">
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- Bootstrap 5 CSS -->
@@ -27,7 +28,7 @@
       background-size: cover;
       background-position: center;
       position: relative;
-      height: 40vh;
+      height: 70vh;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -79,13 +80,13 @@
 
     .contact-icon {
       font-size: 1.8rem;
-      color: #0044ff;
+      color: #01024f;
       margin-right: 35px;
       flex-shrink: 0;
     }
 
     .contact-card h4 {
-      color: #0044ff;
+      color: #01024f;
     }
 
     .contact-text {
@@ -105,7 +106,7 @@
     .social-icons a {
       font-size: 1.5rem;
       margin: 0 20px;
-      color: #0044ff;
+      color: #01024f;
       transition: transform 0.3s ease, color 0.3s ease;
     }
 
@@ -122,6 +123,133 @@
 
     .btn-primary:hover {
       background-color: #0033cc;
+    }
+
+
+    /* ================================
+   DATA PARTNERS SECTION (ISOLATED)
+================================ */
+
+    .data-partners-section {
+      padding: 40px 20px;
+      background-color: #ffffff;
+      position: relative;
+      isolation: isolate;
+      min-height: 320px;
+    }
+
+    .data-partners-section .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    /* Section title */
+    .section-title {
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 40px;
+      color: #0f172a;
+    }
+
+    /* Grid layout */
+    .data-partners-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 40px;
+      place-items: center;
+    }
+
+    /* Card */
+    .data-partner-card {
+      width: 100%;
+      max-width: 320px;
+      height: 180px;
+      /* 🔑 more vertical room */
+
+      background-color: #ffffff;
+      border-radius: 14px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      text-decoration: none;
+      position: relative;
+      z-index: 1;
+
+      transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+    }
+
+    .data-partner-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
+    }
+
+    /* Stack logo + divider + role */
+    .partner-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* 🔑 UNIFORM LOGO SLOT (prevents layout break) */
+    .partner-logo {
+      width: 180px;
+      height: 90px;
+      /* fixed slot height */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+    }
+
+    /* Bounce Cure – perfect circle */
+    .partner-logo.bounce-cure {
+      width: 105px;
+      height: 105px;
+
+      background-image: url("../images/rasul.jpg");
+      background-size: cover;
+      background-position: center;
+
+      border-radius: 50%;
+      overflow: hidden;
+    }
+
+    /* Verify Emails */
+    .partner-logo.veriemails {
+      background-image: url("../images/veriemails.png");
+    }
+
+    /* Global Business Alliance */
+    .partner-logo.gba {
+      background-image: url("../images/global_business_alliance.png");
+    }
+
+    /* Divider under logo */
+    .partner-divider {
+      width: 40px;
+      height: 2px;
+      background-color: #6366f1;
+      margin: 14px 0 10px;
+      border-radius: 2px;
+    }
+
+    /* Role text */
+    .partner-role {
+      font-size: 13px;
+      font-weight: 600;
+      color: #475569;
+      text-align: center;
+      letter-spacing: 0.3px;
     }
   </style>
 </head>
@@ -140,29 +268,32 @@
   <!-- Contact Section -->
   <section class="contact-section container">
     <div class="row g-4">
-      
+
       <!-- Contact Form (Left Side) -->
       <div class="col-lg-6">
         <div class="contact-card">
           <h4 class="mb-4 fw-bold">Send us a Message</h4>
-          <form>
+          <form action="https://formsubmit.co/rasulabaccotech@gmail.com" method="POST">
             <div class="mb-3">
               <label class="form-label">Full Name</label>
-              <input type="text" class="form-control" placeholder="Your Name" required>
+              <input type="text" class="form-control" name="Name" placeholder="Your Name" required>
             </div>
             <div class="mb-3">
               <label class="form-label">Email Address</label>
-              <input type="email" class="form-control" placeholder="you@example.com" required>
+              <input type="email" class="form-control" name="Email" placeholder="you@example.com" required>
             </div>
             <div class="mb-3">
               <label class="form-label">Phone</label>
-              <input type="tel" class="form-control" placeholder="+1 234 567 890">
+              <input type="tel" class="form-control" name="Number" placeholder="+1 234 567 890">
             </div>
             <div class="mb-3">
               <label class="form-label">Message</label>
-              <textarea class="form-control" rows="5" placeholder="Type your message..." required></textarea>
+              <textarea class="form-control" rows="5" name="Message" placeholder="Type your message..."
+                required></textarea>
             </div>
-            <button type="submit" class="btn btn-primary w-100">Send Message</button>
+            <input type="hidden" name="_next" value="http://127.0.0.1:5500/pages/thank-you.html">
+            <button type="submit" class="btn w-100" style="color: white; background-color: #01024f;">Send
+              Message</button>
           </form>
         </div>
       </div>
@@ -194,8 +325,48 @@
           </div>
         </div>
       </div>
+
+
     </div>
   </section>
+
+  <section class="data-partners-section">
+    <div class="container">
+      <h2 class="section-title">Our Partners</h2>
+
+      <div class="data-partners-grid">
+        <!-- Campaign partner - Bounce Cure -->
+        <a href="https://www.bouncecure.com/" target="_blank" rel="noopener noreferrer" class="data-partner-card">
+          <div class="partner-content">
+            <div class="partner-logo bounce-cure"></div>
+            <span class="partner-divider"></span>
+            <p class="partner-role">Campaign Partner</p>
+          </div>
+        </a>
+
+        <!-- Data verification partner - Verify Emails -->
+        <a href="https://www.veriemails.com/" target="_blank" rel="noopener noreferrer" class="data-partner-card">
+          <div class="partner-content">
+            <div class="partner-logo veriemails"></div>
+            <span class="partner-divider"></span>
+            <p class="partner-role">Data Verification Partner</p>
+          </div>
+        </a>
+
+        <!-- Data partner - Global Business Alliance -->
+        <a href="https://www.globalbusinessalliance.net" target="_blank" rel="noopener noreferrer"
+          class="data-partner-card">
+          <div class="partner-content">
+            <div class="partner-logo gba"></div>
+            <span class="partner-divider"></span>
+            <p class="partner-role">Data Partner</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+  <script src="/js/layout.js"></script>
+
 
   <div id="footer"></div>
 
@@ -203,19 +374,8 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
   <!-- Dynamic Navbar/Footer -->
-  <script>
-    fetch('/pages/navbar.html')
-      .then(res => res.text())
-      .then(data => {
-        document.getElementById('navbar').innerHTML = data;
-      });
 
-    fetch('/pages/footer.html')
-      .then(res => res.text())
-      .then(data => {
-        document.getElementById('footer').innerHTML = data;
-      });
-  </script>
 
 </body>
+
 </html>

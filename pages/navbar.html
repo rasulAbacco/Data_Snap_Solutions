@@ -9,353 +9,7 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
-  <style>
-    :root {
-      --primary-blue: #0046ff;
-      --primary-purple: #6366f1;
-      --primary-pink: #ec4899;
-      --dark-blue: #1e293b;
-      --light-gray: #f8fafc;
-      --gray-200: #e2e8f0;
-      --gray-400: #94a3b8;
-      --white: #ffffff;
-      --glass-bg: rgba(255, 255, 255, 0.1);
-      --glass-border: rgba(255, 255, 255, 0.18);
-      --shadow-light: rgba(0, 70, 255, 0.15);
-      --shadow-heavy: rgba(0, 70, 255, 0.3);
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Inter', sans-serif;
-    }
-
-    /* Keep Original Topbar Styles Exactly */
-    /* Topbar */
-    .topbar {
-      background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      border-bottom: 1px solid var(--glass-border);
-      padding: 20px 0;
-      position: relative;
-      z-index: 1000;
-    }
-
-    .topbar::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: linear-gradient(90deg,
-          transparent,
-          rgba(0, 70, 255, 0.05),
-          transparent);
-      pointer-events: none;
-    }
-
-    .topbar-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 0 20px;
-    }
-
-    .logo img {
-      height: 80px;
-      filter: drop-shadow(0 4px 8px var(--shadow-light));
-      transition: transform 0.3s ease;
-    }
-
-    .logo img:hover {
-      transform: scale(1.05);
-    }
-
-    .info-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 15px;
-      width: 100%;
-      max-width: 800px;
-    }
-
-    .info-card {
-      background: rgba(255, 255, 255, 0.7);
-      backdrop-filter: blur(10px);
-      border-radius: 15px;
-      border: 1px solid var(--glass-border);
-      padding: 15px;
-      transition: all 0.3s ease;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .info-card::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg,
-          transparent,
-          rgba(0, 70, 255, 0.1),
-          transparent);
-      transition: left 0.6s ease;
-    }
-
-    .info-card:hover::before {
-      left: 100%;
-    }
-
-    .info-card:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 25px var(--shadow-light);
-      border-color: var(--primary-blue);
-    }
-
-    .info-icon {
-      font-size: 24px;
-      color: var(--primary-blue);
-      margin-bottom: 8px;
-    }
-
-    .info-title {
-      font-weight: 600;
-      color: var(--primary-blue);
-      margin-bottom: 2px;
-    }
-
-    .info-detail {
-      color: #666;
-      font-size: 14px;
-    }
-
-    .mobile-menu-btn {
-      display: none;
-      background: none;
-      border: none;
-      font-size: 24px;
-      color: #333;
-      cursor: pointer;
-      padding: 8px;
-    }
-
-    /* Main Navigation */
-    .main-nav {
-      background: rgba(0, 70, 255, 0.95);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-      padding: 0;
-      position: relative;
-      z-index: 999;
-      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-
-    .nav-container {
-      max-width: 90%;
-      margin: 0 auto;
-      padding: 0 15px;
-    }
-
-    .navbar {
-      padding: 0;
-    }
-
-    .navbar-nav {
-      gap: 5px;
-      margin: 5px 0;
-    }
-
-    .nav-link {
-      color: var(--white) !important;
-      font-weight: 500;
-      text-transform: uppercase;
-      font-size: 14px;
-      letter-spacing: 0.5px;
-      padding: 10px 15px !important;
-      position: relative;
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      border-radius: 8px;
-      overflow: hidden;
-      margin: 10px 0px;
-    }
-
-    .nav-link::before {
-      content: "";
-      position: absolute;
-      bottom: 0;
-      left: 50%;
-      width: 0;
-      height: 3px;
-      background: linear-gradient(90deg, transparent, var(--white), transparent);
-      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-      transform: translateX(-50%);
-      border-radius: 2px;
-    }
-
-    .nav-link::after {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: rgba(255, 255, 255, 0.1);
-      opacity: 0;
-      transition: opacity 0.3s ease;
-      border-radius: 8px;
-    }
-
-    .nav-link:hover::before {
-      width: 80%;
-    }
-
-    .nav-link:hover::after {
-      opacity: 1;
-    }
-
-    .nav-link:hover {
-      transform: translateY(-2px);
-      color: var(--white) !important;
-    }
-
-    .dropdown-menu {
-      border: none;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
-      border-radius: 8px;
-      padding: 8px 0;
-      min-width: 200px;
-    }
-
-    .dropdown-item {
-      padding: 10px 20px;
-      font-size: 14px;
-      transition: all 0.2s ease;
-    }
-
-    .dropdown-item:hover,
-    .dropdown-item:focus {
-      background: #f8f9fa;
-      color: #007bff;
-    }
-
-    /* Mobile Styles */
-    @media (max-width: 991.98px) {
-      .info-grid {
-        display: none;
-      }
-
-      .mobile-menu-btn {
-        display: block;
-      }
-
-      .navbar-collapse {
-        background: white;
-        margin-top: 10px;
-        border-top: 1px solid #dee2e6;
-        padding-top: 15px;
-      }
-
-      .navbar-nav {
-        margin: 0;
-      }
-
-      .nav-link {
-        padding: 15px 0 !important;
-        border-radius: 0 !important;
-        border-bottom: 1px solid #f0f0f0;
-        margin: 0 !important;
-      }
-
-      .dropdown-menu {
-        position: static !important;
-        transform: none !important;
-        box-shadow: none;
-        background: #f8f9fa;
-        margin: 0;
-        border-radius: 0;
-        border: none;
-        padding: 0;
-      }
-
-      .dropdown-item {
-        padding: 12px 20px;
-        border-bottom: 1px solid #e9ecef;
-        background: #f8f9fa;
-      }
-
-      .dropdown-item:last-child {
-        border-bottom: none;
-      }
-    }
-
-    @media (max-width: 768px) {
-      .topbar-container {
-        flex-direction: column;
-        gap: 15px;
-        text-align: center;
-      }
-
-      .logo img {
-        height: 40px;
-      }
-
-      .info-grid {
-        display: flex !important;
-        gap: 15px;
-        justify-content: center;
-      }
-
-      .info-card {
-        font-size: 13px;
-      }
-    }
-
-    @media (max-width: 576px) {
-      .topbar-container {
-        padding: 10px;
-      }
-
-      .info-grid {
-        flex-direction: column !important;
-        gap: 10px !important;
-        align-items: center;
-      }
-
-      .info-card {
-        justify-content: center;
-      }
-    }
-
-    /* Demo Content */
-    .demo-content {
-      padding: 60px 20px;
-      text-align: center;
-      max-width: 800px;
-      margin: 0 auto;
-    }
-
-    .demo-content h1 {
-      color: #333;
-      margin-bottom: 20px;
-    }
-
-    .demo-content p {
-      color: #666;
-      line-height: 1.8;
-    }
-  </style>
+  <link rel="stylesheet" href="/css/navbar-styles.css">
 </head>
 
 <body>
@@ -363,11 +17,11 @@
   <header class="topbar">
     <div class="topbar-container">
       <div class="logo">
-        <a href="/"><img src="../images/Logo.png" alt="Data Snap Solutions Logo" width="200" class="h-100" /></a>
+        <a href="/"><img src="../images/logo3.png" alt="Data Snap Solutions Logo" width="200" class="h-100" /></a>
       </div>
 
       <div class="info-grid">
-        <div class="info-card">
+        <!-- <div class="info-card">
           <div class="info-icon">
             <i class="fas fa-map-marker-alt"></i>
           </div>
@@ -376,21 +30,21 @@
             <div>3524 Silverside Road</div>
             <div>Suite 35B Wilmington, DE</div>
           </div>
-        </div>
+        </div> -->
 
         <div class="info-card">
           <div class="info-icon">
-            <i class="fas fa-phone-alt"></i>
+            <i class="fas fa-phone-alt mr-2"></i>Phone
           </div>
-          <div class="info-title">Phone</div>
+          <div class="info-title"></div>
           <div class="info-detail">+1 302 538 9148</div>
         </div>
 
         <div class="info-card">
           <div class="info-icon">
-            <i class="fas fa-envelope"></i>
+            <i class="fas fa-envelope mr-2"></i>Email
           </div>
-          <div class="info-title">Email</div>
+          <div class="info-title"></div>
           <div class="info-detail">info@datasnapsolutionsinc.com</div>
         </div>
       </div>
@@ -415,7 +69,7 @@
               <a class="nav-link" href="/pages/about.html">About Us</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/pages/how-we-source-our-data.html">source our data</a>
+              <a class="nav-link" href="/pages/how-we-source-our-data.html">our data source</a>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
@@ -460,7 +114,7 @@
     </div>
   </nav>
 
-  
+
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 

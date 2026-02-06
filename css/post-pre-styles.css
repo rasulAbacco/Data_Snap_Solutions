@@ -5,7 +5,7 @@
 }
 
 .hero-section {
-  background-image: url("https://datasnapsolutionsinc.com/img/ev.jpg");
+  background-image: url("../images/post_event_pre_event.jpg");
   background-size: cover;
   background-position: center;
   height: 80vh;
@@ -105,7 +105,9 @@
   cursor: pointer;
   border: 1px solid #f4f8ff;
   transition: all 0.3s;
-  box-shadow: 3px 3px 9px #c5c5c5, -3px -3px 9px #f6faff;
+  box-shadow:
+    3px 3px 9px #c5c5c5,
+    -3px -3px 9px #f6faff;
   margin-bottom: 1rem;
 }
 
@@ -115,7 +117,9 @@
 }
 
 .button-boxes .btn:active {
-  box-shadow: inset 4px 4px 12px #c5c5c5, inset -4px -4px 12px #81a5e4;
+  box-shadow:
+    inset 4px 4px 12px #c5c5c5,
+    inset -4px -4px 12px #81a5e4;
   border: none;
   color: #0044ff;
 }
